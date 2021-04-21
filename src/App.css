@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   font-family: 'Rubik', sans-serif;
+	color: #2D2E2F;
+  height: 4000px;
 }
 
 .App-logo {
@@ -40,4 +42,13 @@
 
 .c_custom {
 	max-width: 1640px !important;
+}
+
+.reg-25{
+	font-size: 25px;
+}
+
+.semi-50{
+	font-size: 50px;
+	font-weight: 600;
 }
