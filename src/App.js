@@ -8,10 +8,10 @@ import Hero from './Components/Hero/Hero';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import NotFound from './Components/NotFound/NotFound';
+import Album from './Components/Album/Album';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Switch>
               <Route path="/home">
                   <Hero></Hero>
+                  <Album></Album>
                   <CategoryCard></CategoryCard>
               </Route>
               <Route path="/outlets">
@@ -28,6 +29,7 @@ function App() {
               </Route>
               <Route exact path="/">
                   <Hero></Hero>
+                  <Album></Album>
                   <CategoryCard></CategoryCard>
               </Route>
               <Route path="*">

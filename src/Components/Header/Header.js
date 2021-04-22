@@ -9,7 +9,7 @@ const Header = () => {
             <header className="header">
                 <div className="container">
                     <Navbar expand="md">
-                        <Navbar.Brand href="#home">
+                        <Navbar.Brand href="/home">
                             <img src={logo} width="70" className="d-inline-block align-top" alt="logo"/>
                         </Navbar.Brand>
                         
