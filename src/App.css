@@ -43,6 +43,11 @@
 	max-width: 1640px !important;
 }
 
+a:hover{
+	text-decoration:none;
+}
+
+/*fonts*/
 .reg-25{
 	font-size: 25px;
 }
@@ -57,10 +62,7 @@
 	font-weight: 400;
 }
 
-a:hover{
-	text-decoration:none;
-}
-
+/*backgrounds*/
 .bg-tag-1{
   background-color: #E6B8FF;
 }
@@ -83,6 +85,23 @@ a:hover{
 
 .bg-tag-6{
   background-color: #282828;
+}
+
+/*buttons*/
+.btn-tag-1{
+  background-color: #6c757d;
+  color: #fff;
+  border-radius: 20px;
+  border-color: transparent;
+}
+
+.btn-tag-1:hover{
+  background-color: rgb(223,49,60);
+  border-color: transparent;
+}
+
+.btn-tag-2:focus{
+  box-shadow: none;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

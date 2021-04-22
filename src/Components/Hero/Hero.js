@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import haatbazar from '../../img/haatbazar.png'; 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 
 const Hero = () => {
     return (
@@ -19,9 +19,10 @@ const Hero = () => {
                             <Col sm={4} className="order-sm-2  order-3">
                                 <Row>
                                     <Col sm={12} className="h-740">
-                                        <div className="sticky-el stick-pad">
+                                        <div className="sticky-el stick-pad text-sm-left pb-3">
                                             <h2 className="semi-50">NSU HAATBAZAR</h2>
                                             <p className="reg-25">The legacy of NSU Entrepreneurship.</p>
+                                            <Button variant="outline-secondary" className="btn-tag-1 px-4">Learn More</Button>
                                         </div>
                                     </Col>
                                 </Row>
