@@ -1,8 +1,6 @@
 .App {
-  text-align: center;
   font-family: 'Rubik', sans-serif;
 	color: #2D2E2F;
-  height: 4000px;
 }
 
 .App-logo {
@@ -40,6 +38,7 @@
   }
 }
 
+/**wizard starts from here**/
 .c_custom {
 	max-width: 1640px !important;
 }
@@ -51,4 +50,110 @@
 .semi-50{
 	font-size: 50px;
 	font-weight: 600;
+}
+
+.reg-55{
+	font-size: 55px;
+	font-weight: 400;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+.bg-tag-1{
+  background-color: #E6B8FF;
+}
+
+.bg-tag-2{
+  background-color: rgb(232,193,209);
+}
+
+.bg-tag-3{
+  background-color: #C4E7C9;
+}
+
+.bg-tag-4{
+  background-color: #EFCFB3;
+}
+
+.bg-tag-5{
+  background-color: #CCDEE2;
+}
+
+.bg-tag-6{
+  background-color: #282828;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .semi-50 {
+      font-size: 26px;
+  }
+
+  .reg-25 {
+      font-size: 13px;
+  }
+
+  .reg-55 {
+    font-size: 32px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .semi-50 {
+      font-size: 26px;
+  }
+
+  .reg-25 {
+      font-size: 13px;
+  }
+
+  .reg-55{
+    font-size: 38px;
+  }
+
+  .reg-55 {
+    font-size: 22px;
+  }
+
+}
+
+/* Medium devices(sm) (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .semi-50 {
+      font-size: 26px;
+  }
+
+  .reg-25 {
+      font-size: 13px;
+  }
+
+  .reg-55{
+    font-size: 38px;
+  }
+
+  .reg-55 {
+    font-size: 22px;
+  }
+}
+
+/* Large devices(md) (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .semi-50 {
+      font-size: 31px;
+  }
+
+  .reg-25 {
+      font-size: 15px;
+  }
+
+  .reg-55{
+    font-size: 38px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
