@@ -90,7 +90,6 @@ a:hover{
 /*buttons*/
 .btn-tag-1{
   background-color: #6c757d;
-  color: #fff;
   border-radius: 20px;
   border-color: transparent;
 }
@@ -102,6 +101,10 @@ a:hover{
 
 .btn-tag-2:focus{
   box-shadow: none;
+}
+
+.btn-tag-1 a{
+  color: #fff;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

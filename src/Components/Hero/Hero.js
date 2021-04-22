@@ -22,7 +22,7 @@ const Hero = () => {
                                         <div className="sticky-el stick-pad text-sm-left pb-3">
                                             <h2 className="semi-50">NSU HAATBAZAR</h2>
                                             <p className="reg-25">The legacy of NSU Entrepreneurship.</p>
-                                            <Button variant="outline-secondary" className="btn-tag-1 px-4">Learn More</Button>
+                                            <Button variant="outline-secondary" className="btn-tag-1 px-4"><a href="/home">Learn More</a></Button>
                                         </div>
                                     </Col>
                                 </Row>
