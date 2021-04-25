@@ -13,6 +13,7 @@ import {
 import NotFound from './Components/NotFound/NotFound';
 import Album from './Components/Album/Album';
 import { Button } from 'react-bootstrap';
+import Card from './Components/Card/Card';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                     <Hero></Hero>
                     <Album></Album>
                     <CategoryCard></CategoryCard>
+                    <Card></Card>
                 </Route>
                 <Route path="/outlets">
                     <NotFound></NotFound>

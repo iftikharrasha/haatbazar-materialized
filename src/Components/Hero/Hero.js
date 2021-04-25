@@ -1,7 +1,8 @@
 import React from 'react';
-import './Hero.css';
 import haatbazar from '../../img/haatbazar.png'; 
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Button } from '@material-ui/core';
+import './Hero.css';
 
 const Hero = () => {
     return (
@@ -22,7 +23,10 @@ const Hero = () => {
                                         <div className="sticky-el stick-pad text-sm-left pb-3">
                                             <h1 className="semi-50">NSU HAATBAZAR</h1>
                                             <p className="reg-25">The legacy of NSU Entrepreneurship.</p>
-                                            <Button variant="outline-secondary" className="btn-tag-1 px-4"><a href="/home">Learn More</a></Button>
+                                            {/* <Button variant="outline-secondary" className="btn-tag-1 px-4"><a href="/home">Learn More</a></Button> */}
+                                            <Button variant="outlined" color="secondary" className="btn-tag-1 px-4">
+                                                Learn More
+                                            </Button>
                                         </div>
                                     </Col>
                                 </Row>
