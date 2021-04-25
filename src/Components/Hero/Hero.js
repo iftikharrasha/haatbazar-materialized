@@ -7,7 +7,7 @@ const Hero = () => {
     return (
             <>
                 <section className="hero">
-                    <Container className="c_custom">
+                    <Container className="c_custom c_sm_custom">
                         <Row className="row pt-4">
                             <Col sm={2} className="order-sm-1 order-1">
                                 <div className="sticky-el stick-pad pb-0">

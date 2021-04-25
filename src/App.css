@@ -1,5 +1,9 @@
-.App {
+body {
   font-family: 'Rubik', sans-serif;
+}
+
+
+.App {
 	color: #2D2E2F;
 }
 
@@ -39,9 +43,6 @@
 }
 
 /**wizard starts from here**/
-.c_custom {
-	max-width: 1640px !important;
-}
 
 a:hover{
 	text-decoration:none;
@@ -176,6 +177,57 @@ a:hover{
   border-bottom: 8px solid #00CA72;
 }
 
+.facebook{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    box-sizing: border-box !important;
+    display: block;
+    direction: ltr !important;
+}
+
+.facebook Button{
+  border-radius: 3px 0 0 3px;
+  transform: translateX(2px);
+  font-size: 13px;
+  position: relative;
+  border: none;
+  outline: none;
+  padding: 12px 14px 12px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: #f4364c !important;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  opacity: 0.96;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fb-text{
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  white-space: nowrap !important;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  cursor: pointer;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  color: #ffffff !important;
+  color: var(--hjFeedbackAccentTextColor, #fff) !important;
+}
+
+.fb-text span i{
+  transform: rotate(-180deg);
+  font-size: 16px;
+}
+
+
+
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
@@ -215,28 +267,12 @@ a:hover{
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .c_custom {
+    max-width: 720px !important;
+  }
+
   .semi-50 {
-      font-size: 26px;
-  }
-
-  .reg-25 {
-      font-size: 13px;
-  }
-
-  .reg-55{
-    font-size: 38px;
-  }
-
-  .reg-55 {
-    font-size: 22px;
-  }
-
-}
-
-/* Medium devices(sm) (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .semi-50 {
-      font-size: 26px;
+    font-size: 24px;
   }
 
   .light-28 {
@@ -249,7 +285,47 @@ a:hover{
   }
 
   .reg-25 {
-      font-size: 13px;
+    font-size: 12px;
+  }
+
+  .reg-55{
+    font-size: 38px;
+  }
+
+  .reg-55 {
+    font-size: 22px;
+  }
+
+  .rel-pad{
+    padding-top: 35px;
+    padding-bottom: 0px;
+    padding-left: 0rem!important;
+  }
+
+  .story-height .stick-pad {
+      padding-top: 60px;
+      background-color: transparent !important;
+  }
+
+}
+
+/* Medium devices(sm) (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .semi-50 {
+    font-size: 24px;
+  }
+
+  .light-28 {
+    font-size: 16px;
+  }
+
+  .med-50 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .reg-25 {
+    font-size: 12px;
   }
 
   .reg-55{
@@ -274,8 +350,8 @@ a:hover{
 
 /* Large devices(md) (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .semi-50 {
-      font-size: 31px;
+  .semi-50 {
+      font-size: 22px;
   }
 
   .reg-25 {
@@ -285,8 +361,91 @@ a:hover{
   .reg-55{
     font-size: 38px;
   }
+
+  .med-50 {
+    font-size: 22px;
+}
+
+  .light-28 {
+    font-size: 18px;
+  }
+
+  .rel-pad {
+    padding-top: 140px;
+  }
+
+  .rel-pad-2 {
+    padding-top: 380px;
+  }
+
+  .rel-pad-3 {
+    padding-top: 260px;
+  }
+
+  .rel-pad-4 {
+    padding-top: 150px;
+  }
+  
+  .mt-150 {
+    margin-top: 100px;
+  }
+
+  .mt-250 {
+      margin-top: 200px;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1441.98px){
+  .semi-50 {
+    font-size: 32px;
+  }
+
+  .med-50 {
+    font-size: 32px;
+  }
+
+  .reg-25 {
+    font-size: 16px;
+  }
+
+  .reg-55 {
+    font-size: 38px;
+  }
+
+  .light-28 {
+    font-size: 18px;
+  }
+
+  .rel-pad {
+    padding-top: 250px;
+  }
+
+  .rel-pad-2 {
+    padding-top: 600px;
+  }
+
+  .rel-pad-3 {
+    padding-top: 450px;
+  }
+
+  .rel-pad-4 {
+    padding-top: 250px;
+  }
+  
+  .mt-150 {
+    margin-top: 100px;
+  }
+
+  .mt-250 {
+      margin-top: 200px;
+  }
 }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1442px) {
+  .c_custom {
+    max-width: 1640px !important;
+  }
+}
+

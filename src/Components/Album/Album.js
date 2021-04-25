@@ -13,23 +13,23 @@ const Album = () => {
                 <Container className="c_custom">
                     <Row className="pt-4">
                         <Col sm={5} className="album-height">
-                            <div className="alb-one sticky-el stick-pad pl-5">
+                            <div className="alb-one sticky-el sticky-el-sm sm-top-1 stick-pad pl-5">
                                     <img className="img-fluid" src={album_six} alt="album-one"/>
                             </div>
-                            <div className="alb-two sticky-el stick-pad pl-5">
+                            <div className="alb-two sticky-el sticky-el-sm sm-top-2 stick-pad pl-5">
                                 <img className="img-fluid two-img" src={album_five} alt="album-two"/>
                             </div>
-                            <div className="alb-three sticky-el stick-pad pl-5">
+                            <div className="alb-three sticky-el sticky-el-sm sm-top-3 stick-pad pl-5">
                                 <img className="img-fluid three-img" src={album_four} alt="album-three"/>
                             </div>
-                            <div className="alb-four sticky-el stick-pad pl-5">
+                            <div className="alb-four sticky-el sticky-el-sm sm-top-4 stick-pad pl-5">
                                 <img className="img-fluid three-img" src={album_three} alt="album-three"/>
                             </div>
                         </Col>
                         <Col sm={7}>
                             <div className="px-3 px-sm-5">
                                 <div className="story-height">
-                                    <div className="sticky-el stick-pad pl-5 bg-white">
+                                    <div className="sticky-el sticky-el-sm stick-pad pl-5 bg-white">
                                         <h2 className="semi-50 text-right"><span className="c-tag-1">Background</span> Story</h2>
                                         <span className="bottom-line bl-story"></span>
                                     </div>
