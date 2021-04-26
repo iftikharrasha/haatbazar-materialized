@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"; 
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import './Card.css';
-import nine from '../../img/nine.jpg'; 
+import theminusplan from '../../uploads/outlets/theminusplan.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -69,7 +69,7 @@ const Card = () => {
                             <div className="cards">
                                
                                <figure className="outlet-avatar">
-                                   <LazyLoadImage effect="blur" src={nine}/>
+                                   <LazyLoadImage effect="blur" src={theminusplan}/>
                                </figure>
 
                                <div className="card_in">
@@ -103,7 +103,7 @@ const Card = () => {
                             <div className="cards">
                                <a href="/profile">
                                     <figure className="outlet-avatar">
-                                        <LazyLoadImage effect="blur" src={nine}/>
+                                        <LazyLoadImage effect="blur" src={theminusplan}/>
                                     </figure>
                                </a>
 
@@ -139,7 +139,7 @@ const Card = () => {
                                
                                 <a href="/profile">
                                     <figure className="outlet-avatar">
-                                        <LazyLoadImage effect="blur" src={nine}/>
+                                        <LazyLoadImage effect="blur" src={theminusplan}/>
                                     </figure>
                                 </a>
 
@@ -175,7 +175,7 @@ const Card = () => {
                                
                                 <a href="/profile">
                                     <figure className="outlet-avatar">
-                                        <LazyLoadImage effect="blur" src={nine}/>
+                                        <LazyLoadImage effect="blur" src={theminusplan}/>
                                     </figure>
                                 </a>
 

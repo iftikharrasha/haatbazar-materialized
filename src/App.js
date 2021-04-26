@@ -61,7 +61,7 @@ function App() {
         <div className="facebook">
             <Button>
                 <div className="fb-text">
-                <span><i class="fab fa-facebook"></i></span> Facebook</div>
+                <span><i className="fab fa-facebook"></i></span> Facebook</div>
             </Button>
         </div>
     </div>

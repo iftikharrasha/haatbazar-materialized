@@ -17,8 +17,8 @@
 .profile-img {
     width: 300px;
     height: 300px;
-    background: transparent;
-    padding: 4px;
+    background: #fff;
+    padding: 15px;
     border-radius: 50%;
     border: 1px solid #e7e7e7;
     margin: auto;
@@ -52,10 +52,89 @@
     padding: 0 5px;
 }
 
+.avatar{
+    overflow: hidden;
+}
+
+.avatar img {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.avatar .owner {
+    margin: 20px 0 0 20px;
+    float: left;
+}
+
+
+.product__photo {
+    position: relative;
+}
+
+.photo-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.photo-main img, .photo-album li img{
+    max-width: 100%;
+}
+
+
+.photo-album {
+    padding: 0.7em 1em;
+    border-radius: 0 0 6px 6px;
+    background-color: #fff;
+}
+
+.photo-album ul {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+
+.photo-album li {
+    float: left;
+    width: 80px;
+    height: 80px;
+    padding: 7px;
+    border-radius: 3px;
+	list-style: none;
+    cursor: pointer;
+}
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-   
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mt--200-img {
+        margin-top: -300px !important;
+    }
+
+    .mt--200-div {
+        margin-top: 0px !important;
+    }
+
+    .social-profile {
+        overflow: hidden;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .pt-xs-100{
+        padding-top: 100px;
+    }
+
+    .photo-container {
+        display: block;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
