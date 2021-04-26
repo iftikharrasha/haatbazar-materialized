@@ -15,7 +15,7 @@ import { Button } from 'react-bootstrap';
 import Card from './Components/Card/Card';
 import LazyLoad from './Components/LazyLoad/LazyLoad';
 import Profile from './Components/Profile/Profile';
-// import NotFound from './Components/NotFound/NotFound';
+import Related from './Components/Related/Related';
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
                     <Route exact path="/profile">
                         <Header></Header>
                         <Profile></Profile>
+                        <Related></Related>
                     </Route>
                     <Route exact path="/">
                         <Header></Header>

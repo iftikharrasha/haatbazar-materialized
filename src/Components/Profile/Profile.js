@@ -8,7 +8,6 @@ import productThree from '../../uploads/products/theminusplan_3_2.jpg';
 import productFour from '../../uploads/products/theminusplan_3_3.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import $ from 'jquery';
 import './Profile.css';
 
 const Profile = () => {
