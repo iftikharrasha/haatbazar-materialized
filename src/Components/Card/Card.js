@@ -5,6 +5,8 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import './Card.css';
 import nine from '../../img/nine.jpg'; 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Card = () => {
     var settings = {
@@ -67,7 +69,7 @@ const Card = () => {
                             <div className="cards">
                                
                                <figure className="outlet-avatar">
-                                   <img src={nine}/>
+                                   <LazyLoadImage effect="blur" src={nine}/>
                                </figure>
 
                                <div className="card_in">
@@ -101,7 +103,7 @@ const Card = () => {
                            <div className="cards">
                                
                                <figure className="outlet-avatar">
-                                   <img src={nine}/>
+                                   <LazyLoadImage effect="blur" src={nine}/>
                                </figure>
 
                                <div className="card_in">
@@ -135,7 +137,7 @@ const Card = () => {
                            <div className="cards">
                                
                                <figure className="outlet-avatar">
-                                   <img src={nine}/>
+                                   <LazyLoadImage effect="blur" src={nine}/>
                                </figure>
 
                                <div className="card_in">
@@ -169,7 +171,7 @@ const Card = () => {
                            <div className="cards">
                                
                                <figure className="outlet-avatar">
-                                   <img src={nine}/>
+                                   <LazyLoadImage effect="blur" src={nine}/>
                                </figure>
 
                                <div className="card_in">

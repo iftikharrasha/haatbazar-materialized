@@ -4,7 +4,9 @@ import './Album.css';
 import album_six from '../../img/album-six.jpg'; 
 import album_five from '../../img/album-five.jpg'; 
 import album_four from '../../img/album-four.jpg'; 
-import album_three from '../../img/album-one.jpg'; 
+import album_three from '../../img/album-one.jpg';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Album = () => {
     return (
@@ -14,16 +16,16 @@ const Album = () => {
                     <Row className="pt-4">
                         <Col sm={5} className="album-height">
                             <div className="alb-one sticky-el sticky-el-sm sm-top-1 stick-pad pl-5">
-                                    <img className="img-fluid" src={album_six} alt="album-one"/>
+                                    <LazyLoadImage effect="blur" className="img-fluid" src={album_six} alt="album-one"/>
                             </div>
                             <div className="alb-two sticky-el sticky-el-sm sm-top-2 stick-pad pl-5">
-                                <img className="img-fluid two-img" src={album_five} alt="album-two"/>
+                                <LazyLoadImage effect="blur" className="img-fluid two-img" src={album_five} alt="album-two"/>
                             </div>
                             <div className="alb-three sticky-el sticky-el-sm sm-top-3 stick-pad pl-5">
-                                <img className="img-fluid three-img" src={album_four} alt="album-three"/>
+                                <LazyLoadImage effect="blur" className="img-fluid three-img" src={album_four} alt="album-three"/>
                             </div>
                             <div className="alb-four sticky-el sticky-el-sm sm-top-4 stick-pad pl-5">
-                                <img className="img-fluid three-img" src={album_three} alt="album-three"/>
+                                <LazyLoadImage effect="blur" className="img-fluid three-img" src={album_three} alt="album-three"/>
                             </div>
                         </Col>
                         <Col sm={7}>

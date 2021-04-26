@@ -8,7 +8,7 @@ const LazyLoad = () => {
                 <Container className="c_custom">
                     <Row className="pt-4">
                         <Col sm={12} className="lazy-load">
-                            <div class="my-class-2 in-progress just-a-box"></div>
+                            <div className="my-class-2 in-progress just-a-box"></div>
                         </Col>
                     </Row>
                 </Container>    

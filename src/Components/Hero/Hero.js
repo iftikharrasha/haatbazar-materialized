@@ -2,6 +2,8 @@ import React from 'react';
 import haatbazar from '../../img/haatbazar.png'; 
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Hero.css';
 
 const Hero = () => {
@@ -49,7 +51,7 @@ const Hero = () => {
                             </Col>
                             <Col sm={3} className="h-1570 order-sm-3 order-2">
                                 <div className="sticky-el stick-pad">
-                                    <img className="svg-pic" src={haatbazar} alt="haatbazar"/>
+                                    <LazyLoadImage effect="blur" className="svg-pic" src={haatbazar} alt="haatbazar"/>
                                 </div>
                             </Col>
                             <Col sm={2} className="order-sm-4 order-4 d-none d-sm-block">
