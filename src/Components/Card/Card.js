@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"; 
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
@@ -96,15 +96,16 @@ const Card = () => {
                                            </p>
                                    </div>
                                </div>
-                           </div>
-                           {/* card ends  */}
+                            </div>
+                            {/* card ends  */}
 
-                           {/* card starts  */}
-                           <div className="cards">
-                               
-                               <figure className="outlet-avatar">
-                                   <LazyLoadImage effect="blur" src={nine}/>
-                               </figure>
+                            {/* card starts  */}
+                            <div className="cards">
+                               <a href="/profile">
+                                    <figure className="outlet-avatar">
+                                        <LazyLoadImage effect="blur" src={nine}/>
+                                    </figure>
+                               </a>
 
                                <div className="card_in">
                                    <div className="card_left"></div>
@@ -130,15 +131,17 @@ const Card = () => {
                                            </p>
                                    </div>
                                </div>
-                           </div>
-                           {/* card ends  */}
+                            </div>
+                            {/* card ends  */}
 
-                           {/* card starts  */}
-                           <div className="cards">
+                            {/* card starts  */}
+                            <div className="cards">
                                
-                               <figure className="outlet-avatar">
-                                   <LazyLoadImage effect="blur" src={nine}/>
-                               </figure>
+                                <a href="/profile">
+                                    <figure className="outlet-avatar">
+                                        <LazyLoadImage effect="blur" src={nine}/>
+                                    </figure>
+                                </a>
 
                                <div className="card_in">
                                    <div className="card_left"></div>
@@ -164,17 +167,19 @@ const Card = () => {
                                            </p>
                                    </div>
                                </div>
-                           </div>
-                           {/* card ends  */}
+                            </div>
+                            {/* card ends  */}
 
-                           {/* card starts  */}
-                           <div className="cards">
+                            {/* card starts  */}
+                            <div className="cards">
                                
-                               <figure className="outlet-avatar">
-                                   <LazyLoadImage effect="blur" src={nine}/>
-                               </figure>
+                                <a href="/profile">
+                                    <figure className="outlet-avatar">
+                                        <LazyLoadImage effect="blur" src={nine}/>
+                                    </figure>
+                                </a>
 
-                               <div className="card_in">
+                                <div className="card_in">
                                    <div className="card_left"></div>
                                    <div className="card_right">
                                        <div className="icon-item">
@@ -197,9 +202,9 @@ const Card = () => {
                                            Exercitationem!
                                            </p>
                                    </div>
-                               </div>
-                           </div>
-                           {/* card ends  */}
+                                </div>
+                            </div>
+                            {/* card ends  */}
 
 </Slider>
                                 

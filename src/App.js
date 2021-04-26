@@ -14,12 +14,13 @@ import Album from './Components/Album/Album';
 import { Button } from 'react-bootstrap';
 import Card from './Components/Card/Card';
 import LazyLoad from './Components/LazyLoad/LazyLoad';
+import Profile from './Components/Profile/Profile';
 // import NotFound from './Components/NotFound/NotFound';
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
   return (
-    <div classNameName="App">
+    <div className="App">
         <Router>
 
                 <Switch>
@@ -35,6 +36,10 @@ function App() {
                             <Header></Header>
                             <NotFound></NotFound>
                         </Suspense>
+                    </Route>
+                    <Route exact path="/profile">
+                        <Header></Header>
+                        <Profile></Profile>
                     </Route>
                     <Route exact path="/">
                         <Header></Header>
