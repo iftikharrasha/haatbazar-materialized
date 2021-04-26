@@ -37,6 +37,7 @@ const Card = () => {
               settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
+              arrows: false,
             },
           },
         ],
@@ -45,16 +46,20 @@ const Card = () => {
     return (
         <>
             <section className="cards">
-                <Container fluid>
+                <Container className="c_custom">
                     <Row>
-                        <Col lg={2}>
+                        <Col lg={12}>
                                 <div className="brand-snippet">
                                     <h2 className="semi-50 text-right">Brands</h2>
                                     <span className="bottom-line bl-story"></span>
                                 </div>
                         </Col>
+                    </Row>
+                </Container>
 
-                        <Col lg={9}>
+                <Container fluid>
+                    <Row>
+                        <Col lg={10} className="offset-lg-1">
                             <div className="products-slick" data-nav="#slick-nav-1">
 
 <Slider {...settings}>

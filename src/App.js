@@ -1,4 +1,4 @@
-
+import { React, lazy, Suspense } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button } from '@material-ui/core';
 import './App.css';
@@ -10,35 +10,47 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import NotFound from './Components/NotFound/NotFound';
 import Album from './Components/Album/Album';
 import { Button } from 'react-bootstrap';
 import Card from './Components/Card/Card';
+import LazyLoad from './Components/LazyLoad/LazyLoad';
+// import NotFound from './Components/NotFound/NotFound';
+const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
   return (
     <div classNameName="App">
-        <Header></Header>
         <Router>
-            <Switch>
-                <Route path="/home">
-                    <Hero></Hero>
-                    <Album></Album>
-                    <CategoryCard></CategoryCard>
-                    <Card></Card>
-                </Route>
-                <Route path="/outlets">
-                    <NotFound></NotFound>
-                </Route>
-                <Route exact path="/">
-                    <Hero></Hero>
-                    <Album></Album>
-                    <CategoryCard></CategoryCard>
-                </Route>
-                <Route path="*">
-                    <NotFound></NotFound>
-                </Route>
-            </Switch>
+
+                <Switch>
+                    <Route path="/home">
+                        <Header></Header>
+                        <Hero></Hero>
+                        <Album></Album>
+                        <CategoryCard></CategoryCard>
+                        <Card></Card>
+                    </Route>
+                    <Route path="/outlets">
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <NotFound></NotFound>
+                        </Suspense>
+                    </Route>
+                    <Route exact path="/">
+                        <Header></Header>
+                        <Hero></Hero>
+                        <Album></Album>
+                        <CategoryCard></CategoryCard>
+                        <Card></Card>
+                    </Route>
+                    <Route path="*">
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <NotFound></NotFound>
+                        </Suspense>
+                    </Route>
+                </Switch>
+
         </Router>
         
         <div className="facebook">
