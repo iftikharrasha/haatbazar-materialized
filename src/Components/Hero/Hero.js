@@ -26,7 +26,7 @@ const Hero = () => {
                                             <h1 className="semi-50">NSU HAATBAZAR</h1>
                                             <p className="reg-25">The legacy of NSU Entrepreneurship.</p>
                                             {/* <Button variant="outline-secondary" className="btn-tag-1 px-4"><a href="/home">Learn More</a></Button> */}
-                                            <Button variant="outlined" color="secondary" className="btn-tag-1 px-4">
+                                            <Button variant="outlined" color="secondary" className="px-4">
                                                 Learn More
                                             </Button>
                                         </div>

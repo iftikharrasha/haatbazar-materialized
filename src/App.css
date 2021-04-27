@@ -150,15 +150,15 @@ a:hover{
 }
 
 /*buttons*/
-.btn-tag-1{
-  background-color: #6c757d;
+.btn-tag-1 {
+  background-color: #6c757d !important;
   border-radius: 20px;
   border-color: transparent;
 }
 
 .btn-tag-1:hover{
-  background-color: #EF4B69;
-  border-color: transparent;
+  background-color: #EF4B69 !important;
+  border-color: transparent !important;
 }
 
 .btn-tag-2:focus{

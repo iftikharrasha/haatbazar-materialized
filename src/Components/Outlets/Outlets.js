@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Card from '../Card/Card';
 import Categories from '../Categories/Categories';
 import OutletCard from '../OutletCard/OutletCard';
+import catToggle from '../../img/toggler-icon.svg';
 import './Outlets.css';
 
 const Outlets = () => {
@@ -37,49 +37,64 @@ const Outlets = () => {
                         </Row>
                 </div>
                 <div className="outlet-below mt-150-div">
-                        <Row>
+                        <Row className="pt-5">
                             <Col sm={12}>
-                                
-                            </Col>
-                        </Row>
-                        <Row className="pt-4">
-                            <Col sm={12}>
-                                <Row>
-                                    <Col sm={2} className="cat-height">
-                                        <Categories></Categories>
-                                    </Col>
-                                    <Col sm={9} className="offset-md-1">
-                                        <Row>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>   
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                            <Col sm={6} lg={4}>
-                                                <OutletCard></OutletCard>
-                                            </Col>
-                                        </Row>
-                                    </Col>
-                                </Row>
+                                <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
+                                        <header class="bmd-layout-header">
+                                            <div class="navbar navbar-light bg-faded">
+                                                <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-p1">
+                                                    <span class="sr-only">Toggle drawer</span>
+                                                    <img src={catToggle} alt="toggle"/>
+                                                </button>
+                                                <ul class="nav navbar-nav">
+                                                    <li class="nav-item">Showing: All</li>
+                                                </ul>
+                                            </div>
+                                        </header>
+                                        <div id="dw-p1" class="bmd-layout-drawer bg-faded">
+                                            <header>
+                                                <a class="navbar-brand semi-50">Categories</a>
+                                            </header>
+                                            <div className="cat-height">
+                                                <Categories></Categories>
+                                            </div>
+                                        </div>
+                                        <main class="bmd-layout-content">
+                                                    <Row>
+                                                        <Col lg={11} className="offset-lg-1">
+                                                            <Row>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>   
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                                <Col sm={6} lg={4}>
+                                                                    <OutletCard></OutletCard>
+                                                                </Col>
+                                                            </Row>
+                                                        </Col>
+                                                    </Row>
+                                        </main>
+                                </div>
                             </Col>
                         </Row>
                 </div>

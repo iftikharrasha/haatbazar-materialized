@@ -5,30 +5,24 @@ const Categories = () => {
     return (
         <>
         
-                                        <ul class="product-categories sticky-el cat-top stick-pad">
-                                            <li className="reg-20">
-                                                <a href="#">Foods</a>
-                                                <span class="count">34</span>
+                                        <ul class="list-group product-categories">
+                                            <li>
+                                                <a href="#" className="reg-20 list-group-item">Foods<span class="count">34</span></a>
                                             </li>
-                                            <li className="reg-20">
-                                                <a href="#">Gadgets</a>
-                                                <span class="count">31</span>
+                                            <li>
+                                                <a href="#" className="reg-20 list-group-item">Gadgets<span class="count">31</span></a>
                                             </li>
-                                            <li className="reg-20">
-                                                <a href="#">Cosmetics</a>
-                                                <span class="count">21</span>
+                                            <li>
+                                                <a href="#" className="reg-20 list-group-item">Cosmetics<span class="count">21</span></a> 
                                             </li>
-                                            <li className="reg-20">
-                                                <a href="#">Clothing</a>
-                                                <span class="count">16</span>
+                                            <li>
+                                                <a href="#" className="reg-20 list-group-item">Clothing<span class="count">16</span></a>
                                             </li>
-                                            <li className="reg-20">
-                                                <a href="#">Gifts</a>
-                                                <span class="count">11</span>
+                                            <li>
+                                                <a href="#" className="reg-20 list-group-item">Gifts<span class="count">11</span></a>
                                             </li>
-                                            <li className="reg-20">
-                                                <a href="#">Grocery</a>
-                                                <span class="count">12</span>
+                                            <li>
+                                                <a href="#" className="reg-20 list-group-item">Grocery<span class="count">12</span></a>
                                             </li>
                                         </ul>
         </>
