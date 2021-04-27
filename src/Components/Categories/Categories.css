@@ -1,0 +1,29 @@
+
+.cat-height{
+    height: 1490px;
+}
+
+.cat-top{
+    padding-top: 0px;
+    top: 100px;
+}
+
+.product-categories{
+    margin-top: 60px;
+}
+
+.product-categories li {
+    padding: 4px 0;
+    margin: 0;
+    list-style: none;
+    padding-bottom: 15px;
+}
+
+.product-categories li a {
+    text-decoration: none;
+    color: #2D2E2F;
+}
+
+.product-categories li span {
+    float: right;
+}

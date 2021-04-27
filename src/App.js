@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import Album from './Components/Album/Album';
 import { Button } from 'react-bootstrap';
-import Card from './Components/Card/Card';
+import Brand from './Components/Brands/Brands';
 import LazyLoad from './Components/LazyLoad/LazyLoad';
 import Profile from './Components/Profile/Profile';
 import Related from './Components/Related/Related';
@@ -29,7 +29,7 @@ function App() {
                         <Hero></Hero>
                         <Album></Album>
                         <CategoryCard></CategoryCard>
-                        <Card></Card>
+                        <Brand></Brand>
                     </Route>
                     <Route path="/outlets">
                             <Header></Header>
@@ -45,7 +45,7 @@ function App() {
                         <Hero></Hero>
                         <Album></Album>
                         <CategoryCard></CategoryCard>
-                        <Card></Card>
+                        <Brand></Brand>
                     </Route>
                     <Route path="*">
                         <Suspense fallback={<LazyLoad></LazyLoad>}>

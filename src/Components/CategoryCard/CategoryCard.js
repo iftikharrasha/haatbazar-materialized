@@ -15,7 +15,6 @@ const CategoryCard = () => {
         <>
             <section className="cat-card stick-pad my-5" id="#">
                 <Container className="c_custom">
-                    <p></p>
                     <h2 className="semi-50">Categories</h2> 
                     <span className="bottom-line bl-cat"></span>
                     <Row>

@@ -2,26 +2,24 @@ import React from 'react';
 import theminusplan from '../../uploads/outlets/theminusplan.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import './Card.css';
+import '../Card/Card.css';
+import './OutletCard.css';
 
-const Card = () => {
+const OutletCard = () => {
     return (
         <>
             {/* card starts  */}
-            <div className="cards">
+            <div className="cards cards-2">
                        <div className="card_in">
                            <div className="card_top">
                                 <a href="/profile">
-                                    <figure className="outlet-avatar">
+                                    <figure className="outlet-avatar outlet-avatar-2">
                                         <LazyLoadImage effect="blur" src={theminusplan}/>
                                     </figure>
                                 </a>
                            </div>
                            <div className="card_below">
                                    <h4>The Minus Plan</h4>
-                                   <p>
-                                   The Real taste of Nan Roti in Kashundi
-                                   </p>
                                    <div className="reactions">
                                         <div className="chart-1">
                                             <button type="button">
@@ -42,4 +40,4 @@ const Card = () => {
     );
 };
 
-export default Card;
+export default OutletCard;
