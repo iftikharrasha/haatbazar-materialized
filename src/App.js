@@ -1,6 +1,5 @@
 import { React, lazy, Suspense } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Button } from '@material-ui/core';
 import './App.css';
 import CategoryCard from './Components/CategoryCard/CategoryCard';
 import Header from './Components/Header/Header';
@@ -16,6 +15,7 @@ import Card from './Components/Card/Card';
 import LazyLoad from './Components/LazyLoad/LazyLoad';
 import Profile from './Components/Profile/Profile';
 import Related from './Components/Related/Related';
+import Outlets from './Components/Outlets/Outlets';
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
@@ -32,10 +32,8 @@ function App() {
                         <Card></Card>
                     </Route>
                     <Route path="/outlets">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
                             <Header></Header>
-                            <NotFound></NotFound>
-                        </Suspense>
+                            <Outlets></Outlets>
                     </Route>
                     <Route exact path="/profile">
                         <Header></Header>

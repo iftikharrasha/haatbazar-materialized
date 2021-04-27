@@ -22,7 +22,7 @@ const Hero = () => {
                             <Col sm={4} className="order-sm-2  order-3">
                                 <Row>
                                     <Col sm={12} className="h-740">
-                                        <div className="sticky-el stick-pad text-sm-left pb-3">
+                                        <div className="sticky-el stick-pad text-sm-left pb-5">
                                             <h1 className="semi-50">NSU HAATBAZAR</h1>
                                             <p className="reg-25">The legacy of NSU Entrepreneurship.</p>
                                             {/* <Button variant="outline-secondary" className="btn-tag-1 px-4"><a href="/home">Learn More</a></Button> */}

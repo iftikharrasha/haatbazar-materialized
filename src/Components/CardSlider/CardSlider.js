@@ -37,11 +37,21 @@ const CardSlider = () => {
           {
               breakpoint: 770,
               settings: {
-              slidesToShow: 1,
+              slidesToShow: 2,
               slidesToScroll: 1,
               arrows: false,
             },
+            
           },
+          {
+            breakpoint: 525,
+            settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+          
+        },
         ],
       };
 
@@ -56,35 +66,31 @@ const CardSlider = () => {
 <Slider {...settings}>
                     {/* card starts  */}
                     <div className="cards">
-                       
-                        <a href="/profile">
-                            <figure className="outlet-avatar">
-                                <LazyLoadImage effect="blur" src={theminusplan}/>
-                            </figure>
-                       </a>
-
                        <div className="card_in">
-                           <div className="card_left"></div>
-                           <div className="card_right">
-                               <div className="icon-item">
-                                   <div className="chart">
-                                       <button type="button">
-                                           <i className="fa fa-heart"> 30</i>
-                                       </button>
-                                   </div>
-                                   <div className="chart">
-                                       <button type="button">
-                                           <a href=""><i className="fa fa-eye"> 97</i></a>
-                                       </button>
-                                   </div>
-                               </div>
+                           <div className="card_top">
+                                <a href="/profile">
+                                    <figure className="outlet-avatar">
+                                        <LazyLoadImage effect="blur" src={theminusplan}/>
+                                    </figure>
+                                </a>
                            </div>
                            <div className="card_below">
-                                   <h4>Nine</h4>
+                                   <h4>The Minus Plan</h4>
                                    <p>
-                                   Lorem ipsum dolor sit amet consect etur, adipisicing elit.
-                                   Exercitationem!
+                                   The Real taste of Nan Roti in Kashundi
                                    </p>
+                                   <div className="reactions">
+                                        <div className="chart-1">
+                                            <button type="button">
+                                                <i className="fa fa-heart"> 30</i>
+                                            </button>
+                                        </div>
+                                        <div className="chart-2">
+                                            <button type="button">
+                                                <a href=""><i className="fa fa-eye"> 97</i></a>
+                                            </button>
+                                        </div>
+                                    </div>
                            </div>
                        </div>
                     </div>
@@ -92,34 +98,31 @@ const CardSlider = () => {
 
                     {/* card starts  */}
                     <div className="cards">
-                       <a href="/profile">
-                            <figure className="outlet-avatar">
-                                <LazyLoadImage effect="blur" src={theminusplan}/>
-                            </figure>
-                       </a>
-
                        <div className="card_in">
-                           <div className="card_left"></div>
-                           <div className="card_right">
-                               <div className="icon-item">
-                                   <div className="chart">
-                                       <button type="button">
-                                           <i className="fa fa-heart"> 30</i>
-                                       </button>
-                                   </div>
-                                   <div className="chart">
-                                       <button type="button">
-                                           <a href=""><i className="fa fa-eye"> 97</i></a>
-                                       </button>
-                                   </div>
-                               </div>
+                           <div className="card_top">
+                                <a href="/profile">
+                                    <figure className="outlet-avatar">
+                                        <LazyLoadImage effect="blur" src={theminusplan}/>
+                                    </figure>
+                                </a>
                            </div>
                            <div className="card_below">
-                                   <h4>Nine</h4>
+                                   <h4>The Minus Plan</h4>
                                    <p>
-                                   Lorem ipsum dolor sit amet conse ctetur, adipisicing elit.
-                                   Exercitationem!
+                                   The Real taste of Nan Roti in Kashundi
                                    </p>
+                                   <div className="reactions">
+                                        <div className="chart-1">
+                                            <button type="button">
+                                                <i className="fa fa-heart"> 30</i>
+                                            </button>
+                                        </div>
+                                        <div className="chart-2">
+                                            <button type="button">
+                                                <a href=""><i className="fa fa-eye"> 97</i></a>
+                                            </button>
+                                        </div>
+                                    </div>
                            </div>
                        </div>
                     </div>
@@ -127,35 +130,31 @@ const CardSlider = () => {
 
                     {/* card starts  */}
                     <div className="cards">
-                       
-                        <a href="/profile">
-                            <figure className="outlet-avatar">
-                                <LazyLoadImage effect="blur" src={theminusplan}/>
-                            </figure>
-                        </a>
-
                        <div className="card_in">
-                           <div className="card_left"></div>
-                           <div className="card_right">
-                               <div className="icon-item">
-                                   <div className="chart">
-                                       <button type="button">
-                                           <i className="fa fa-heart"> 30</i>
-                                       </button>
-                                   </div>
-                                   <div className="chart">
-                                       <button type="button">
-                                           <a href=""><i className="fa fa-eye"> 97</i></a>
-                                       </button>
-                                   </div>
-                               </div>
+                           <div className="card_top">
+                                <a href="/profile">
+                                    <figure className="outlet-avatar">
+                                        <LazyLoadImage effect="blur" src={theminusplan}/>
+                                    </figure>
+                                </a>
                            </div>
                            <div className="card_below">
-                                   <h4>Nine</h4>
+                                   <h4>The Minus Plan</h4>
                                    <p>
-                                   Lorem ipsum dolor sit amet con se ctetur, adipisicing elit.
-                                   Exercitationem!
+                                   The Real taste of Nan Roti in Kashundi
                                    </p>
+                                   <div className="reactions">
+                                        <div className="chart-1">
+                                            <button type="button">
+                                                <i className="fa fa-heart"> 30</i>
+                                            </button>
+                                        </div>
+                                        <div className="chart-2">
+                                            <button type="button">
+                                                <a href=""><i className="fa fa-eye"> 97</i></a>
+                                            </button>
+                                        </div>
+                                    </div>
                            </div>
                        </div>
                     </div>
@@ -163,37 +162,33 @@ const CardSlider = () => {
 
                     {/* card starts  */}
                     <div className="cards">
-                       
-                        <a href="/profile">
-                            <figure className="outlet-avatar">
-                                <LazyLoadImage effect="blur" src={theminusplan}/>
-                            </figure>
-                        </a>
-
-                        <div className="card_in">
-                           <div className="card_left"></div>
-                           <div className="card_right">
-                               <div className="icon-item">
-                                   <div className="chart">
-                                       <button type="button">
-                                           <i className="fa fa-heart"> 30</i>
-                                       </button>
-                                   </div>
-                                   <div className="chart">
-                                       <button type="button">
-                                           <a href=""><i className="fa fa-eye"> 97</i></a>
-                                       </button>
-                                   </div>
-                               </div>
+                       <div className="card_in">
+                           <div className="card_top">
+                                <a href="/profile">
+                                    <figure className="outlet-avatar">
+                                        <LazyLoadImage effect="blur" src={theminusplan}/>
+                                    </figure>
+                                </a>
                            </div>
                            <div className="card_below">
-                                   <h4>Nine</h4>
+                                   <h4>The Minus Plan</h4>
                                    <p>
-                                   Lorem ipsum dolor sit amet cons ecte tur, adipisicing elit.
-                                   Exercitationem!
+                                   The Real taste of Nan Roti in Kashundi
                                    </p>
+                                   <div className="reactions">
+                                        <div className="chart-1">
+                                            <button type="button">
+                                                <i className="fa fa-heart"> 30</i>
+                                            </button>
+                                        </div>
+                                        <div className="chart-2">
+                                            <button type="button">
+                                                <a href=""><i className="fa fa-eye"> 97</i></a>
+                                            </button>
+                                        </div>
+                                    </div>
                            </div>
-                        </div>
+                       </div>
                     </div>
                     {/* card ends  */}
 
