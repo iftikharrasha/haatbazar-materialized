@@ -1,7 +1,7 @@
 import React from 'react';
+import { useParams } from 'react-router';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
-import theminusplan from '../../uploads/outlets/theminusplan.jpg';
 import productOne from '../../uploads/products/theminusplan_3_0.jpg';
 import productTwo from '../../uploads/products/theminusplan_3_1.jpg';
 import productThree from '../../uploads/products/theminusplan_3_2.jpg';
@@ -9,8 +9,15 @@ import productFour from '../../uploads/products/theminusplan_3_3.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Profile.css';
+import outletData from '../../fakeData/data.json';
 
-const Profile = () => {
+const Profile = (props) => {
+
+    const { outletKey } = useParams();
+    const outletDetail = outletData.find(brand => brand.key === outletKey);
+    console.log(outletDetail);
+
+    const {outlet, title, img, react, views, category} = outletDetail;
 
     function clickedOne(e) {
         e.preventDefault();
@@ -62,20 +69,20 @@ const Profile = () => {
                                     <Row className="pt-xs-100">
                                         <Col md={9} className="offset-md-3 offset-2 col-4">
                                                 <i className="fa fa-eye c-tag-2"></i>
-                                                <span> 929</span>
+                                                <span> {views}</span>
                                         </Col>
                                         <Col md={9} sm={4} className="offset-md-3 text-md-left text-right col-4">
                                                 <i className="fa fa-heart c-tag-2"></i>
-                                                <span> 67</span>
+                                                <span> {react}</span>
                                         </Col>
                                         <Col md={9} className="offset-md-3 pt-3 offset-2 col-10">
-                                                <p className="c-tag-2">#Food</p>
+                                                <p className="c-tag-2">#{category}</p>
                                         </Col>
                                     </Row>
                                 </Col>
                                 <Col lg={4} md={3} className="mt--200-img">
                                     <div className="profile-img">
-                                        <LazyLoadImage effect="blur" src={theminusplan}/>
+                                        <LazyLoadImage effect="blur" src={img}/>
                                     </div>
                                 </Col>
                                 <Col lg={4} md={5}>
@@ -102,7 +109,7 @@ const Profile = () => {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h2 className="text-center py-3">The Minus Plan</h2>
+                                    <h2 className="text-center py-3">{outlet}</h2>
                                 </Col>
                             </Row>
                         </div>
@@ -146,7 +153,7 @@ const Profile = () => {
                                                 <div className="profile-info-inner">
 
                                                     <div className="profile-bio-wrap">
-                                                            <h3 className="c-tag-2 reg-20">UK based diet and health food products</h3>
+                                                            <h3 className="c-tag-2 reg-20">{title}</h3>
 
                                                             <p className="c-tag-2">Date Posted: 22-10-23</p>
 
@@ -161,7 +168,7 @@ const Profile = () => {
                                                             
                                                     </div>
 
-                                                    <div class="avatar mt-3">
+                                                    <div className="avatar mt-3">
                                                         <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-366-456318.png"/>
                                                         <div className="owner">
                                                             <h5>

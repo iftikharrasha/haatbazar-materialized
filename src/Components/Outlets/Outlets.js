@@ -39,21 +39,21 @@ const Outlets = () => {
                 <div className="outlet-below mt-150-div">
                         <Row className="pt-5">
                             <Col sm={12}>
-                                <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
-                                        <header class="bmd-layout-header">
-                                            <div class="navbar navbar-light bg-faded">
-                                                <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-p1">
-                                                    <span class="sr-only">Toggle drawer</span>
+                                <div className="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
+                                        <header className="bmd-layout-header">
+                                            <div className="navbar navbar-light bg-faded">
+                                                <button className="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-p1">
+                                                    <span className="sr-only">Toggle drawer</span>
                                                     <img src={catToggle} alt="toggle"/>
                                                 </button>
-                                                <ul class="nav navbar-nav">
-                                                    <li class="nav-item">Showing: All</li>
+                                                <ul className="nav navbar-nav">
+                                                    <li className="nav-item">Showing: All</li>
                                                 </ul>
                                             </div>
                                         </header>
-                                        <div id="dw-p1" class="bmd-layout-drawer bg-faded">
+                                        <div id="dw-p1" className="bmd-layout-drawer bg-faded">
                                             <header>
-                                                <a class="navbar-brand semi-50">Categories</a>
+                                                <a className="navbar-brand semi-50">Categories</a>
                                             </header>
                                             <div className="cat-height">
                                                 <Categories></Categories>

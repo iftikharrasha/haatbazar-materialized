@@ -8,6 +8,8 @@ import Card from '../Card/Card';
 import outletData from '../../fakeData/data.json';
 
 const CardSlider = () => {
+    // const first5 = outletData.slice(0,5);
+    // const [outlet, setOutlet] = useState(first5);
     const [outlet, setOutlet] = useState([]);
     useEffect(() => {
       setOutlet(outletData);

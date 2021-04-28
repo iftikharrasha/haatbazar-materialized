@@ -35,7 +35,7 @@ function App() {
                             <Header></Header>
                             <Outlets></Outlets>
                     </Route>
-                    <Route exact path="/profile">
+                    <Route path="/profile/:outletKey">
                         <Header></Header>
                         <Profile></Profile>
                         <Related></Related>

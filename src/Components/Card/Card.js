@@ -1,10 +1,11 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 const Card = (props) => {
-    const {outlet, title, img, react, views} = props.outlet;
+    const {outlet, title, img, react, views, key} = props.outlet;
 
     return (
         <>
@@ -12,11 +13,11 @@ const Card = (props) => {
             <div className="cards">
                        <div className="card_in">
                            <div className="card_top">
-                                <a href="/profile">
+                                <Link to={"/profile/"+key}>
                                     <figure className="outlet-avatar">
                                         <LazyLoadImage effect="blur" src={img}/>
                                     </figure>
-                                </a>
+                                </Link>
                            </div>
                            <div className="card_below">
                                    <h4>{outlet}</h4>
