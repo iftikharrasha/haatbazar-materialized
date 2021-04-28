@@ -17,7 +17,7 @@ const Profile = (props) => {
     const outletDetail = outletData.find(brand => brand.key === outletKey);
     console.log(outletDetail);
 
-    const {outlet, title, img, react, views, category} = outletDetail;
+    const {outlet, title, img, react, views, category, datetime} = outletDetail;
 
     function clickedOne(e) {
         e.preventDefault();
@@ -155,7 +155,7 @@ const Profile = (props) => {
                                                     <div className="profile-bio-wrap">
                                                             <h3 className="c-tag-2 reg-20">{title}</h3>
 
-                                                            <p className="c-tag-2">Date Posted: 22-10-23</p>
+                                                            <p className="c-tag-2">Date Posted: {datetime}</p>
 
                                                             <p>Hello Everyone. <br/>
                                                             After completing my bachelor program i had the idea of being an entrepreneur. So, i have opened my own online business The Minus Plan - diet shop and Alhamdulillah this is going well.
