@@ -29,7 +29,7 @@
     }
 
     .story-height {
-        height: 810px;
+        height: 600px;
     }
 }
 
@@ -141,3 +141,25 @@
   @media (min-width: 1442px) {
     
   }
+
+  /*
+*
+*
+*
+*
+*
+*
+*
+/****** Extra extra small devices (s6 mobiles, 320px and below) *******/
+@media (max-width: 320px) {
+	.story-height {
+        height: 700px;
+    }
+}
+
+/****** Extra extra small devices (s6 mobiles, 375px and below) *******/
+@media (min-width: 321px) and (max-width: 376px) {
+	.story-height {
+        height: 650px;
+    }
+}

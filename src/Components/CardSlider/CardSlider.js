@@ -8,23 +8,30 @@ import Card from '../Card/Card';
 
 const CardSlider = () => {
     var settings = {
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 2,
         autoplay: true,
         autoplaySpeed: 2400,
         infinite: false,    
         speed: 1800,
-        cssEase: 'cubic-bezier(.84, 0, .08, .99)',
+        // cssEase: 'cubic-bezier(.84, 0, .08, .99)',
         dots: true,
         arrows: true,
         responsive: [
-        {
-                breakpoint: 1500,
-                settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-              },
-        },
+          {
+              breakpoint: 2100,
+              settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            },
+          },
+          {
+              breakpoint: 1500,
+              settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
           {
               breakpoint: 1028,
               settings: {
@@ -33,23 +40,21 @@ const CardSlider = () => {
             },
           },
           {
-              breakpoint: 770,
-              settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              arrows: false,
-            },
-            
-          },
-          {
-            breakpoint: 525,
+            breakpoint: 770,
             settings: {
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1,
             arrows: false,
+            },  
           },
-          
-        },
+          {
+              breakpoint: 525,
+              settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+            }, 
+          },
         ],
       };
 

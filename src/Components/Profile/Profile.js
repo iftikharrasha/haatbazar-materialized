@@ -58,7 +58,7 @@ const Profile = () => {
                     <Container>
                         <div className="pro-pic mt--200-div">
                             <Row className="pt-4">
-                                <Col md={4}>
+                                <Col md={4} className="pt-md-0 pt-sm-5">
                                     <Row className="pt-xs-100">
                                         <Col md={9} className="offset-md-3 offset-2 col-4">
                                                 <i className="fa fa-eye c-tag-2"></i>
@@ -112,7 +112,7 @@ const Profile = () => {
                         <div className="details">
                             <Row className="pt-4">
                                 <Col sm={12}>
-                                    <Row className="px-5">
+                                    <Row className="px-0 px-md-5">
                                         <Col lg={6}>
                                             <div className="product__photo">
 												<div className="photo-container">
@@ -146,17 +146,17 @@ const Profile = () => {
                                                 <div className="profile-info-inner">
 
                                                     <div className="profile-bio-wrap">
-                                                            <h3 className="c-tag-2">Indian beauty, cosmetic and personal care of your favorite item!</h3>
+                                                            <h3 className="c-tag-2 reg-20">UK based diet and health food products</h3>
 
-                                                            <p className="">Date: 22-10-23</p>
+                                                            <p className="c-tag-2">Date Posted: 22-10-23</p>
 
-                                                            <p>Hello Everyone.
+                                                            <p>Hello Everyone. <br/>
                                                             After completing my bachelor program i had the idea of being an entrepreneur. So, i have opened my own online business The Minus Plan - diet shop and Alhamdulillah this is going well.
-                                                            WE ARE SPECIALISED IN ORGANIC, LOW CALORIE, LOW CARB, VEGAN PRODUCTS! IN SHORT WE DEAL WITH ALL TYPE OF KETO DIET PRODUCTS.
+                                                            WE ARE SPECIALISED IN ORGANIC, LOW CALORIE, LOW CARB, VEGAN PRODUCTS! IN SHORT WE DEAL WITH ALL TYPE OF KETO DIET PRODUCTS. <br/>
                                                             These products are directly imported from United Kingdom (UK). So, i am ensuring you that you will find the best authentic keto products.
                                                             If you guys feel interested please take a quick visit in my page and if you guys looking for keto products may be you will find it interesting. Wish me good luck.
-                                                            Thank you all for your precious time.
-                                                            Here is the facebook link of my page The Minus Plan - diet shop.
+                                                            Thank you all for your precious time. <br/>
+                                                            Do visit my facebook page: The Minus Plan - diet shop.
                                                             </p>
                                                             
                                                     </div>

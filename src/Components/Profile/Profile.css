@@ -135,6 +135,20 @@
     .photo-container {
         display: block;
     }
+
+    .avatar {
+        text-align: center;
+    }
+
+    .avatar img{
+        float: none;
+    }
+
+    .avatar .owner {
+        margin: 20px 0;
+        float: none;
+        text-align: center;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -192,4 +206,26 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1442px) {
     
+}
+
+/*
+*
+*
+*
+*
+*
+*
+*
+/****** Extra extra small devices (s6 mobiles, 320px and below) *******/
+@media (max-width: 320px) {
+	.social-profile {
+        width: 100%;
+    }
+}
+
+/****** Extra extra small devices (s6 mobiles, 375px and below) *******/
+@media (min-width: 321px) and (max-width: 376px) {
+	.social-profile {
+        width: 85%;
+    }
 }

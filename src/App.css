@@ -260,11 +260,11 @@ a:hover{
       font-size: 26px;
   }
 
-  .rel-pad{
-    padding-top: 35px;
+  .rel-pad {
+    padding-top: 20px;
     padding-bottom: 0px;
     padding-left: 0rem!important;
-  }
+}
 
   .story-height .stick-pad {
       padding-top: 60px;

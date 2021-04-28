@@ -29,7 +29,7 @@ const Album = () => {
                             </div>
                         </Col>
                         <Col sm={7}>
-                            <div className="px-3 px-sm-5">
+                            <div className="px-0 px-sm-5">
                                 <div className="story-height">
                                     <div className="sticky-el sticky-el-sm stick-pad pl-5 bg-white">
                                         <h2 className="semi-50 text-right"><span className="c-tag-1">Background</span> Story</h2>

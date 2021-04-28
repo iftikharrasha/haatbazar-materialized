@@ -12,7 +12,7 @@ const Hero = () => {
                 <section className="hero">
                     <Container className="c_custom c_sm_custom">
                         <Row className="row pt-4">
-                            <Col sm={2} className="order-sm-1 order-1">
+                            <Col sm={2} className="order-sm-1 order-1 col-sm-2 d-sm-block d-none">
                                 <div className="sticky-el stick-pad pb-0">
                                     <svg className="svg-red" viewBox="0 0 44 578" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="44" height="578" rx="22" fill="#DF313C"/>

@@ -104,3 +104,25 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 }
+
+/*
+*
+*
+*
+*
+*
+*
+*
+/****** Extra extra small devices (s6 mobiles, 320px and below) *******/
+@media (max-width: 320px) {
+	.category-card {
+        height: 400px;
+    }
+}
+
+/****** Extra extra small devices (s6 mobiles, 375px and below) *******/
+@media (min-width: 321px) and (max-width: 376px) {
+	.category-card {
+        height: 450px;
+    }
+}
