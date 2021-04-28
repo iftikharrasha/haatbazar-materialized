@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Categories from '../Categories/Categories';
 import OutletCard from '../OutletCard/OutletCard';
 import catToggle from '../../img/toggler-icon.svg';
 import './Outlets.css';
+import outletData from '../../fakeData/data.json';
 
 const Outlets = () => {
+    const [outlet, setOutlet] = useState([]);
+    useEffect(() => {
+      setOutlet(outletData);
+      console.log(outletData);
+    }, [])
+
     return (
         <>
         <section>
             <div className="cover">
 
                 <svg className="cover-svg" viewBox="0 0 1920 381" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
+                    <g clipPath="url(#clip0)">
                     <path d="M0 0H1920V196.068L0 381V0Z" fill="#CCDEE2"/>
                     <path d="M1415 50C1415 114.617 1362.62 167 1298 167C1233.38 167 1181 114.617 1181 50L1181 -51C1181 -115.617 1233.38 -168 1298 -168C1362.62 -168 1415 -115.617 1415 -51L1415 50Z" fill="#77E0B5"/>
                     <rect x="1642" y="-420" width="115" height="659" rx="57.5" fill="#FCC8DF"/>
@@ -63,33 +70,16 @@ const Outlets = () => {
                                                     <Row>
                                                         <Col lg={11} className="offset-lg-1">
                                                             <Row>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>   
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
-                                                                <Col sm={6} lg={4}>
-                                                                    <OutletCard></OutletCard>
-                                                                </Col>
+
+                                                            {
+                                                                outlet.map(outlet => <Col sm={6} lg={4}>
+                                                                                        <OutletCard outlet={outlet} key={outlet.key}></OutletCard>
+                                                                                    </Col>
+                                                                          )
+                                                            }
+
+                                                                
+
                                                             </Row>
                                                         </Col>
                                                     </Row>

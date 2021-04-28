@@ -11,7 +11,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const Album = () => {
     return (
         <>
-            <section className="album stick-pad my-5">
+            <section className="album stick-pad my-5" id="learnmore">
                 <Container className="c_custom">
                     <Row className="pt-4">
                         <Col sm={5} className="album-height">

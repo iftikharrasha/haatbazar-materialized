@@ -5,7 +5,7 @@ const Categories = () => {
     return (
         <>
         
-                                        <ul class="list-group product-categories">
+                                        <ul className="list-group product-categories">
                                             <li>
                                                 <a href="#" className="reg-20 list-group-item">Foods<span class="count">34</span></a>
                                             </li>

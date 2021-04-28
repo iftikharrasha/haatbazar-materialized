@@ -82,7 +82,7 @@ const Profile = (props) => {
                                 </Col>
                                 <Col lg={4} md={3} className="mt--200-img">
                                     <div className="profile-img">
-                                        <LazyLoadImage effect="blur" src={img}/>
+                                        <LazyLoadImage effect="blur" src={img} alt={outlet}/>
                                     </div>
                                 </Col>
                                 <Col lg={4} md={5}>
@@ -124,7 +124,7 @@ const Profile = (props) => {
                                             <div className="product__photo">
 												<div className="photo-container">
 													<div className="photo-main">
-														<LazyLoadImage effect="blur" src={productOne} alt="green apple slice" id="img-holder"/>
+														<LazyLoadImage effect="blur" src={productOne} alt="product" id="img-holder"/>
 													</div>
 													
 													<div className="photo-album">
@@ -169,7 +169,7 @@ const Profile = (props) => {
                                                     </div>
 
                                                     <div className="avatar mt-3">
-                                                        <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-366-456318.png"/>
+                                                        <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-366-456318.png" alt="owner"/>
                                                         <div className="owner">
                                                             <h5>
                                                                 Rishad Haque Hriday

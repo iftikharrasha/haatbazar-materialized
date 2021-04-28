@@ -22,24 +22,27 @@ const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 function App() {
   return (
     <div className="App">
-        <Header></Header>
         <Router>
             <ScrollToTop>
                 <Switch>
                     <Route path="/home">
+                        <Header></Header>
                         <Hero></Hero>
                         <Album></Album>
                         <CategoryCard></CategoryCard>
                         <Brand></Brand>
                     </Route>
                     <Route path="/outlets">
+                            <Header></Header>
                             <Outlets></Outlets>
                     </Route>
                     <Route path="/profile/:outletKey">
+                        <Header></Header>
                         <Profile></Profile>
                         <Related></Related>
                     </Route>
                     <Route exact path="/">
+                        <Header></Header>
                         <Hero></Hero>
                         <Album></Album>
                         <CategoryCard></CategoryCard>
@@ -47,6 +50,7 @@ function App() {
                     </Route>
                     <Route path="*">
                         <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
                             <NotFound></NotFound>
                         </Suspense>
                     </Route>
