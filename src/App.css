@@ -204,7 +204,7 @@ a:hover{
   padding: 12px 14px 12px 12px;
   cursor: pointer;
   white-space: nowrap;
-  background-color: #f4364c !important;
+  background-color: #3b5998 !important;
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
   opacity: 0.96;
   width: 40px;
@@ -218,14 +218,12 @@ a:hover{
   word-break: normal !important;
   word-wrap: normal !important;
   white-space: nowrap !important;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   cursor: pointer;
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-lr;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   color: #ffffff !important;
-  color: var(--hjFeedbackAccentTextColor, #fff) !important;
 }
 
 .fb-text span i{

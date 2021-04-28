@@ -20,6 +20,7 @@ import Outlets from './Components/Outlets/Outlets';
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
+    
   return (
     <div className="App">
         <Router>
@@ -33,20 +34,26 @@ function App() {
                         <Brand></Brand>
                     </Route>
                     <Route path="/outlets">
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
                             <Header></Header>
                             <Outlets></Outlets>
+                        </Suspense>
                     </Route>
                     <Route path="/profile/:outletKey">
-                        <Header></Header>
-                        <Profile></Profile>
-                        <Related></Related>
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <Profile></Profile>
+                            <Related></Related>
+                        </Suspense>
                     </Route>
                     <Route exact path="/">
-                        <Header></Header>
-                        <Hero></Hero>
-                        <Album></Album>
-                        <CategoryCard></CategoryCard>
-                        <Brand></Brand>
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <Hero></Hero>
+                            <Album></Album>
+                            <CategoryCard></CategoryCard>
+                            <Brand></Brand>
+                        </Suspense>
                     </Route>
                     <Route path="*">
                         <Suspense fallback={<LazyLoad></LazyLoad>}>

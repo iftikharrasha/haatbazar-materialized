@@ -10,7 +10,7 @@ const Header = () => {
             <header className="header">
                 <div className="container">
 
-                    {/* <Navbar expand="md">
+                    <Navbar expand="md">
                             <Navbar.Brand href="/home">
                                 <img src={logo} width="70" className="d-inline-block align-top" alt="logo"/>
                             </Navbar.Brand>
@@ -18,20 +18,22 @@ const Header = () => {
                             <Navbar.Toggle aria-controls="basic-navbar-nav" className="ml-auto"/>
                             <Navbar.Collapse id="basic-navbar-nav" className="menu">
                                 <Nav className="ml-auto">
-                                    <Nav.Link href="/home" className="pr-4 active">Home</Nav.Link>
-                                    <Nav.Link href="/outlets" className="pr-4">Outlets</Nav.Link>
-                                    <Nav.Link href="/about" className="pr-4">About Us</Nav.Link>
-                                    <Nav.Link href="/contact" className="pr-4">Contact Us</Nav.Link>
+                                    <Nav.Link className="pr-4 active"><Link to="/home">Home</Link></Nav.Link>
+                                    <Nav.Link className="pr-4"><Link to="/outlets">Outlets</Link></Nav.Link>
+                                    <Nav.Link className="pr-4"><Link to="/about">About</Link></Nav.Link>
+                                    <Nav.Link className="pr-4"><Link to="/contact">contact</Link></Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
-                        </Navbar> */}
+                        </Navbar>
                     
 
-                        <nav className="navbar navbar-expand-md navbar-light">
-                            <a href="/home" className="navbar-brand">
+                        {/* <nav className="navbar navbar-expand-md navbar-light">
+                            <Link to="/home" className="navbar-brand">
                                 <img src={logo} width="70" className="d-inline-block align-top" alt="logo"/>
-                            </a>
-                            <button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" className="ml-auto navbar-toggler collapsed">
+                            </Link>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon">
                                 </span>
                             </button>
@@ -47,7 +49,7 @@ const Header = () => {
                                     <Link to="/contact" className="pr-4 nav-link">Contact Us</Link>
                                 </div>
                             </div>
-                        </nav>
+                        </nav> */}
 
                 </div>
             </header> 

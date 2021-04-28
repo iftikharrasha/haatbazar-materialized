@@ -17,7 +17,7 @@ const Profile = (props) => {
     const outletDetail = outletData.find(brand => brand.key === outletKey);
     console.log(outletDetail);
 
-    const {outlet, title, img, react, views, category, datetime} = outletDetail;
+    const {outlet, title, img, description, owner, department, react, views, category, datetime} = outletDetail;
 
     function clickedOne(e) {
         e.preventDefault();
@@ -157,14 +157,7 @@ const Profile = (props) => {
 
                                                             <p className="c-tag-2">Date Posted: {datetime}</p>
 
-                                                            <p>Hello Everyone. <br/>
-                                                            After completing my bachelor program i had the idea of being an entrepreneur. So, i have opened my own online business The Minus Plan - diet shop and Alhamdulillah this is going well.
-                                                            WE ARE SPECIALISED IN ORGANIC, LOW CALORIE, LOW CARB, VEGAN PRODUCTS! IN SHORT WE DEAL WITH ALL TYPE OF KETO DIET PRODUCTS. <br/>
-                                                            These products are directly imported from United Kingdom (UK). So, i am ensuring you that you will find the best authentic keto products.
-                                                            If you guys feel interested please take a quick visit in my page and if you guys looking for keto products may be you will find it interesting. Wish me good luck.
-                                                            Thank you all for your precious time. <br/>
-                                                            Do visit my facebook page: The Minus Plan - diet shop.
-                                                            </p>
+                                                            <p>{description}</p>
                                                             
                                                     </div>
 
@@ -172,10 +165,10 @@ const Profile = (props) => {
                                                         <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-366-456318.png" alt="owner"/>
                                                         <div className="owner">
                                                             <h5>
-                                                                Rishad Haque Hriday
+                                                                {owner}
                                                             </h5>
                                                             <h6>
-                                                                ECE Department, NSU
+                                                                {department}
                                                             </h6>
                                                         </div>
                                                     </div>
