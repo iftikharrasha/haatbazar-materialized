@@ -84,6 +84,9 @@
     max-width: 100%;
 }
 
+.photo-album li img:hover {
+    border: 1px solid #C4E7C9;
+}
 
 .photo-album {
     padding: 0.7em 1em;

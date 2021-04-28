@@ -1,5 +1,5 @@
 .outlet-avatar-2 {
-    left: 10%;
+    left: 17%;
 }
 
 .cards-2{
@@ -22,12 +22,20 @@
     .cards-2 {
         height: 460px;
     }
+
+    .outlet-avatar-2 {
+        left: 7%;
+    }
 }
 
 /* Medium devices(sm) (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .cards-2 {
         height: 460px;
+    }
+
+    .outlet-avatar-2 {
+        left: 7%;
     }
 }
 
@@ -36,12 +44,20 @@
     .cards-2 .card_in {
         width: 100%;
     }
+
+    .outlet-avatar-2 {
+        left: 1%;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1441.98px){
     .cards-2 .card_in {
         width: 100%;
+    }
+
+    .outlet-avatar-2 {
+        left: 8%;
     }
 }
   

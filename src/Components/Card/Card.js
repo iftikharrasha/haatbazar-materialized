@@ -1,10 +1,11 @@
 import React from 'react';
-import theminusplan from '../../uploads/outlets/theminusplan.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Card.css';
 
-const Card = () => {
+const Card = (props) => {
+    const {outlet, title, img, react, views} = props.outlet;
+
     return (
         <>
             {/* card starts  */}
@@ -13,24 +14,24 @@ const Card = () => {
                            <div className="card_top">
                                 <a href="/profile">
                                     <figure className="outlet-avatar">
-                                        <LazyLoadImage effect="blur" src={theminusplan}/>
+                                        <LazyLoadImage effect="blur" src={img}/>
                                     </figure>
                                 </a>
                            </div>
                            <div className="card_below">
-                                   <h4>The Minus Plan</h4>
+                                   <h4>{outlet}</h4>
                                    <p>
-                                   The Real taste of Nan Roti in Kashundi
+                                   {title}
                                    </p>
                                    <div className="reactions">
                                         <div className="chart-1">
                                             <button type="button">
-                                                <i className="fa fa-heart"> 30</i>
+                                                <i className="fa fa-heart"> {react}</i>
                                             </button>
                                         </div>
                                         <div className="chart-2">
                                             <button type="button">
-                                                <a href=""><i className="fa fa-eye"> 97</i></a>
+                                                <a href=""><i className="fa fa-eye"> {views}</i></a>
                                             </button>
                                         </div>
                                     </div>

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"; 
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import './CardSlider.css';
 import Card from '../Card/Card';
+import outletData from '../../fakeData/data.json';
 
 const CardSlider = () => {
+    const [outlet, setOutlet] = useState([]);
+    useEffect(() => {
+      setOutlet(outletData);
+      console.log(outletData);
+    }, [])
+
     var settings = {
         slidesToShow: 4,
         slidesToScroll: 2,
@@ -68,17 +75,9 @@ const CardSlider = () => {
 
 <Slider {...settings}>
 
-                        <Card></Card>
-
-                        <Card></Card>
-
-                        <Card></Card>
-
-                        <Card></Card>
-
-                        <Card></Card>
-
-                        <Card></Card>
+                        {
+                          outlet.map(outlet => <Card outlet={outlet} key={outlet.key}></Card>)
+                        }
 
 </Slider>
                         
