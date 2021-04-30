@@ -27,11 +27,13 @@ function App() {
             <ScrollToTop>
                 <Switch>
                     <Route path="/home">
-                        <Header></Header>
-                        <Hero></Hero>
-                        <Album></Album>
-                        <CategoryCard></CategoryCard>
-                        <Brand></Brand>
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <Hero></Hero>
+                            <Album></Album>
+                            <CategoryCard></CategoryCard>
+                            <Brand></Brand>
+                        </Suspense>
                     </Route>
                     <Route path="/outlets">
                         <Suspense fallback={<LazyLoad></LazyLoad>}>

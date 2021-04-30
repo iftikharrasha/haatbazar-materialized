@@ -13,6 +13,11 @@ const Outlets = () => {
       console.log(outletData);
     }, [])
 
+    function activeDrawer(){
+        document.getElementById('toggle-in').classList.toggle('bmd-drawer-in');
+        document.getElementById('overlay-in').classList.toggle('in');
+    }
+
     return (
         <>
         <section>
@@ -46,10 +51,10 @@ const Outlets = () => {
                 <div className="outlet-below mt-150-div">
                         <Row className="pt-5">
                             <Col sm={12}>
-                                <div className="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
+                                <div className="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay" id="toggle-in">
                                         <header className="bmd-layout-header">
                                             <div className="navbar navbar-light bg-faded">
-                                                <button className="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-p1">
+                                                <button className="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-p1" onClick={activeDrawer}>
                                                     <span className="sr-only">Toggle drawer</span>
                                                     <img src={catToggle} alt="toggle"/>
                                                 </button>
@@ -66,7 +71,7 @@ const Outlets = () => {
                                                 <Categories></Categories>
                                             </div>
                                         </div>
-                                        <main class="bmd-layout-content">
+                                        <main className="bmd-layout-content">
                                                     <Row>
                                                         <Col lg={11} className="offset-lg-1">
                                                             <Row>
@@ -77,13 +82,11 @@ const Outlets = () => {
                                                                                     </Col>
                                                                           )
                                                             }
-
-                                                                
-
                                                             </Row>
                                                         </Col>
                                                     </Row>
                                         </main>
+                                        <div class="bmd-layout-backdrop" id="overlay-in" onClick={activeDrawer}></div>
                                 </div>
                             </Col>
                         </Row>
