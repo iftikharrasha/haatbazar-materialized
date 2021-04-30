@@ -5,12 +5,18 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+
+    function activeToggle(){
+        console.log("clicked");
+        document.getElementById('toggle-btn').classList.toggle('active');
+        document.getElementById('mobile-nav').classList.toggle('active');
+    }
     return (
         <>
             <header className="header">
                 <div className="container">
 
-                    <Navbar expand="md">
+                        {/* <Navbar expand="md">
                             <Navbar.Brand href="/home">
                                 <img src={logo} width="70" className="d-inline-block align-top" alt="logo"/>
                             </Navbar.Brand>
@@ -24,10 +30,10 @@ const Header = () => {
                                     <Nav.Link className="pr-4"><Link to="/contact">contact</Link></Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
-                        </Navbar>
+                        </Navbar> */}
                     
 
-                        {/* <nav className="navbar navbar-expand-md navbar-light">
+                        {/* <nav className="navbar navbar-expand-sm navbar-light NavbarItems">
                             <Link to="/home" className="navbar-brand">
                                 <img src={logo} width="70" className="d-inline-block align-top" alt="logo"/>
                             </Link>
@@ -37,19 +43,46 @@ const Header = () => {
                                 <span className="navbar-toggler-icon">
                                 </span>
                             </button>
-                            <div className="menu navbar-collapse collapse" id="basic-navbar-nav">
-                                <div className="ml-auto navbar-nav">
-                                    <Link to="/home" className="pr-4 active nav-link">Home
-                                        <div className="ripple-container">
-                                        </div>
-                                    </Link>
 
+                             <button className="menu-icon" id="toggle-btn" onClick={activeToggle} aria-label="Main Menu">
+                                <svg width="70" height="70" viewBox="0 0 100 100">
+                                    <path className="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                                    <path className="line line2" d="M 20,50 H 80" />
+                                    <path className="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                                </svg>
+                            </button>
+                            <div className="nav-menu navbar-collapse collapse" id="basic-navbar-nav">
+                                <div className="ml-auto navbar-nav nav-menu" id="mobile-nav">
+                                    <Link to="/home" className="pr-4 active nav-link">Home</Link>
                                     <Link to="/outlets" className="pr-4 nav-link">Outlets</Link>
                                     <Link to="/about" className="pr-4 nav-link">About Us</Link>
                                     <Link to="/contact" className="pr-4 nav-link">Contact Us</Link>
                                 </div>
                             </div>
                         </nav> */}
+
+
+                        <nav className="navbarItems">
+                            <Link to="/home" className="navbar-logo">
+                                <img src={logo} width="70" className="d-inline-block align-top" alt="logo"/>
+                            </Link>
+
+                             <button className="menu-icon" id="toggle-btn" onClick={activeToggle} aria-label="Main Menu">
+                                <svg width="70" height="70" viewBox="0 0 100 100">
+                                    <path className="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                                    <path className="line line2" d="M 20,50 H 80" />
+                                    <path className="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                                </svg>
+                            </button>
+                            <div className="nav-menu" id="basic-navbar-nav">
+                                <div className="ml-auto navbar-nav nav-menu" id="mobile-nav">
+                                    <Link to="/home" className="pr-4 active nav-link">Home</Link>
+                                    <Link to="/outlets" className="pr-4 nav-link">Outlets</Link>
+                                    <Link to="/about" className="pr-4 nav-link">About Us</Link>
+                                    <Link to="/contact" className="pr-4 nav-link">Contact Us</Link>
+                                </div>
+                            </div>
+                        </nav>
 
                 </div>
             </header> 
