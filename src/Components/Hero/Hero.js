@@ -32,7 +32,7 @@ const Hero = () => {
                                     <Col sm={12} className="h-740">
                                         <div className="sticky-el stick-pad text-sm-left pb-5" data-aos="fade-up" data-aos-duration="1000">
                                             <h1 className="semi-50">NSU HAATBAZAR</h1>
-                                            <p className="reg-25">The legacy of NSU Entrepreneurship.</p>
+                                            <p className="reg-25">Countries largest Entrepreneurship simulation is now LIVE.</p>
                                             <Button variant="outlined" color="secondary" className="px-4">
                                                 Learn More
                                             </Button>

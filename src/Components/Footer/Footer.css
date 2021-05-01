@@ -1,0 +1,73 @@
+.footer {
+    padding: 80px 0px;
+}
+
+.foot-slogan img{
+    width: 20%;
+}
+
+.copyright {
+    padding: 14px;
+    padding-bottom: 0px;
+}
+
+.copyright-text p{
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .foot-slogan img {
+        width: 85%;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .foot-slogan img {
+        width: 48%;
+    }
+}
+
+/* Medium devices(sm) (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .foot-slogan img {
+        width: 48%;
+    }
+}
+
+/* Large devices(md) (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .foot-slogan img {
+        width: 35%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1441.98px){
+    .foot-slogan img {
+        width: 29%;
+    }
+}
+  
+/*
+*
+*
+*
+*
+*
+*
+*
+/****** Extra extra small devices (s6 mobiles, 320px and below) *******/
+@media (max-width: 320px) {
+	
+}
+
+/****** Extra extra small devices (s6 mobiles, 375px and below) *******/
+@media (min-width: 321px) and (max-width: 376px) {
+	
+}
+
+ 

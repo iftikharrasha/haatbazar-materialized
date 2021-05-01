@@ -20,7 +20,7 @@ const Outlets = () => {
 
     return (
         <>
-        <section>
+        <section className="outlets pb-5">
             <div className="cover">
 
                 <svg className="cover-svg" viewBox="0 0 1920 381" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -51,6 +51,7 @@
     border-radius: 40px;
     padding: 5%;
     background: linear-gradient(236.57deg, #e6b8ff 28.47%, #ccdee2 70.92%);
+    cursor: pointer;
 }
 
 .card_top {
