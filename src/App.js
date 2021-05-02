@@ -19,6 +19,7 @@ import Related from './Components/Related/Related';
 import Outlets from './Components/Outlets/Outlets';
 import Footer from './Components/Footer/Footer.js';
 import Faq from './Components/Faq/Faq.js';
+import About from './Components/About/About.js';
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
@@ -50,6 +51,13 @@ function App() {
                             <Header></Header>
                             <Profile></Profile>
                             <Related></Related>
+                            <Footer></Footer>
+                        </Suspense>
+                    </Route>
+                    <Route path="/about">
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <About></About>
                             <Footer></Footer>
                         </Suspense>
                     </Route>

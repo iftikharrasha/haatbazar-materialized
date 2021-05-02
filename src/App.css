@@ -8,7 +8,7 @@ a:hover{
 	text-decoration:none;
 }
 
-.hero, .album, .cat-card, .brands, .outlets, .profile, .related, .notFound, .faq{
+.hero, .album, .cat-card, .brands, .outlets, .about, .profile, .related, .notFound, .faq{
   margin-top: 120px;
 }
 
@@ -154,6 +154,20 @@ a:hover{
 
 .btn-tag-1 a{
   color: #fff;
+}
+
+.btn-tag-2 {
+  background: transparent;
+  border: 3px solid #272727;
+  color: #272727;
+  padding: 18px;
+  max-width: 286px;
+  height: 72px;
+  max-height: 72px;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 6px;
 }
 
 .bottom-line {

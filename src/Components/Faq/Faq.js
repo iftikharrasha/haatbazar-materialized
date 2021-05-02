@@ -65,7 +65,7 @@ const Faq = () => {
                                                             tabIndex={indexCount(index)}
                                                         >
                                                             <span className="title-wrapper medi-20">{tab.title}
-                                                                <span className={ active === index  ? 'plus' : 'minus'}></span>
+                                                                <span className={ active === index  ? 'minus' : 'plus'}></span>
                                                             </span>  
                                                         </button>
                                                     </h3>

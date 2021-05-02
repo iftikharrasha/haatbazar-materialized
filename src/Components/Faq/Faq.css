@@ -1,7 +1,6 @@
 #faq-btn {
     display: flex;
     align-items: center;
-    background: #c4c4c4;
     border-radius: 1rem;
     border: none;
     width: 100%;
@@ -10,6 +9,7 @@
     font-weight: bold;
     margin-top: 0.5rem;
     padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
   }
   
   #faq-btn.active {
