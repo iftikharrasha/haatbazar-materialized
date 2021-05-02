@@ -20,6 +20,10 @@
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .alb-one, .alb-two, .alb-three, .alb-four {
+        top: 150px;
+    }
+
     .alb-one img, .alb-two img, .alb-three img, .alb-four img {
         width: 90%;
     }

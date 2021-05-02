@@ -7,7 +7,7 @@ import './Related.css';
 function Related(props) {
     return (
         <>
-            <div className="related">
+            <section className="related">
                 <Container className="c_custom">
                         <Row className="pt-4">
                             <Col sm={12}>
@@ -20,7 +20,7 @@ function Related(props) {
                 </Container> 
                 
                 <CardSlider></CardSlider>
-            </div>
+            </section>
         </>
     );
 }

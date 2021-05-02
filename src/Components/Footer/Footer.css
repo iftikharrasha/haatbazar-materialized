@@ -6,6 +6,10 @@
     width: 20%;
 }
 
+.foot-links a:hover{
+    color: #EF4B69 !important;
+}
+
 .copyright {
     padding: 14px;
     padding-bottom: 0px;

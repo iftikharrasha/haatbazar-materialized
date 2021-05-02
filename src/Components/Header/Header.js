@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../img/logo.svg'; 
 import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+    const [scroll, setScroll] = useState(false);
+    useEffect(() => {
+    window.addEventListener("scroll", () => {
+        setScroll(window.scrollY > 50);
+    });
+    }, []);
 
     function activeToggle(){
         document.getElementById('toggle-btn').classList.toggle('active');
@@ -12,12 +18,12 @@ const Header = () => {
 
     return (
         <>
-            <header className="header">
+            <header className={scroll ? "header-sticky" : "header"}>
                 <div className="container">
                         <nav className="navbarItems">
-                            <Link to="/home" className="navbar-logo">
+                            <a href="/home" className="navbar-logo">
                                 <img src={logo} width="80%" className="d-inline-block align-top" alt="logo"/>
-                            </Link>
+                            </a>
 
                              <div className="menu-icon" id="toggle-btn" onClick={activeToggle}>
                                 <svg width="50" height="50" viewBox="0 0 100 100">
@@ -27,7 +33,7 @@ const Header = () => {
                                 </svg>
                             </div>
                             <div className="nav-menu" id="mobile-nav">
-                                    <Link to="/home" className="pr-4 active nav-links" onClick={activeToggle}>Home</Link>
+                                    <Link to="/home" className="pr-4 active nav-links nav-top-mt" onClick={activeToggle}>Home</Link>
                                     <Link to="/outlets" className="pr-4 nav-links" onClick={activeToggle}>Outlets</Link>
                                     <Link to="/about" className="pr-4 nav-links" onClick={activeToggle}>About Us</Link>
                                     <Link to="/contact" className="pr-4 nav-links" onClick={activeToggle}>Contact Us</Link>

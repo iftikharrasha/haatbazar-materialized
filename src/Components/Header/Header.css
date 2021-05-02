@@ -1,6 +1,26 @@
+.header{
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 10px 0;
+    transition: all .5s cubic-bezier(.9, 0, .33, 1);
+    z-index: 9999;
+}
+
+.header-sticky{
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: all .5s cubic-bezier(.9, 0, .33, 1);
+    box-shadow: 0px 3px 6px #00000029;
+    z-index: 9999;
+}
 
 .navbarItems{
-    background: #fff;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -100,27 +120,33 @@
         position: relative;
     }
 
+    .nav-top-mt{
+        margin-top: 120px;
+    }
+
     .nav-menu{
         display: flex;
         flex-direction: column;
         width: 80%;
-        height: 800px;
+        height: 0vh;
         position: absolute;
-        top: 100px;
+        top: 0;
         left: -100%;
         opacity: 1;
-        transition: all 900ms cubic-bezier(.9, 0, .33, 1);
-        border-radius: 0% 0% 0% 0%;
-        z-index: 999;
+        transition: all 900ms ease;
+        border-radius: 0% 0% 100% 0%;
+        z-index: -1;
     }
 
     .nav-menu.active{
-        background: #CCDEE2;
-        left:0;
+        background: #ccdee2;
+        left: 0;
         opacity: 1;
         transition: all 900ms ease;
-        z-index: 999;
-        border-radius: 0% 0% 100% 0%;
+        z-index: -1;
+        border-radius: 0% 0% 0% 0%;
+        height: 100vh;
+        border-left: 10px solid #D6274D;
     }
 
     .nav-links{
@@ -150,27 +176,33 @@
         position: relative;
     }
 
+    .nav-top-mt{
+        margin-top: 120px;
+    }
+
     .nav-menu{
         display: flex;
         flex-direction: column;
-        width: 80%;
-        height: 100vh;
+        width: 70%;
+        height: 0vh;
         position: absolute;
-        top: 100px;
+        top: 0;
         left: -100%;
         opacity: 1;
-        transition: all 900ms cubic-bezier(.9, 0, .33, 1);
-        border-radius: 0% 0% 0% 0%;
-        z-index: 999;
+        transition: all 900ms ease;
+        border-radius: 0% 0% 100% 0%;
+        z-index: -1;
+        border-left: 20px solid #D6274D;
     }
 
     .nav-menu.active{
-        background: #CCDEE2;
-        left:0;
+        background: #ccdee2;
+        left: 0;
         opacity: 1;
         transition: all 900ms ease;
-        z-index: 999;
-        border-radius: 0% 0% 100% 0%;
+        z-index: -1;
+        border-radius: 0% 0% 0% 0%;
+        height: 100vh;
     }
 
     .nav-links{
@@ -199,27 +231,33 @@
         position: relative;
     }
 
+    .nav-top-mt{
+        margin-top: 120px;
+    }
+
     .nav-menu{
         display: flex;
         flex-direction: column;
-        width: 80%;
-        height: 100vh;
+        width: 60%;
+        height: 0vh;
         position: absolute;
-        top: 100px;
+        top: 0;
         left: -100%;
         opacity: 1;
-        transition: all 900ms cubic-bezier(.9, 0, .33, 1);
-        border-radius: 0% 0% 0% 0%;
-        z-index: 999;
+        transition: all 900ms ease;
+        border-radius: 0% 0% 100% 0%;
+        z-index: -1;
     }
 
     .nav-menu.active{
-        background: #CCDEE2;
-        left:0;
+        background: #ccdee2;
+        left: 0;
         opacity: 1;
         transition: all 900ms ease;
-        z-index: 999;
-        border-radius: 0% 0% 100% 0%;
+        z-index: -1;
+        border-radius: 0% 0% 0% 0%;
+        height: 100vh;
+        border-left: 20px solid #D6274D;
     }
 
     .nav-links{

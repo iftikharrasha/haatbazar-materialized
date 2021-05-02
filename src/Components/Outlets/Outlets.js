@@ -22,7 +22,6 @@ const Outlets = () => {
         <>
         <section className="outlets pb-5">
             <div className="cover">
-
                 <svg className="cover-svg" viewBox="0 0 1920 381" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0)">
                     <path d="M0 0H1920V196.068L0 381V0Z" fill="#CCDEE2"/>
@@ -36,7 +35,6 @@ const Outlets = () => {
                     </clipPath>
                     </defs>
                 </svg>
-
             </div>
 
             <Container className="c_custom">
@@ -86,7 +84,7 @@ const Outlets = () => {
                                                         </Col>
                                                     </Row>
                                         </main>
-                                        <div class="bmd-layout-backdrop" id="overlay-in" onClick={activeDrawer}></div>
+                                        <div className="bmd-layout-backdrop" id="overlay-in" onClick={activeDrawer}></div>
                                 </div>
                             </Col>
                         </Row>

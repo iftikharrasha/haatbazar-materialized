@@ -8,6 +8,10 @@ a:hover{
 	text-decoration:none;
 }
 
+.hero, .album, .cat-card, .brands, .outlets, .profile, .related, .notFound, .faq{
+  margin-top: 120px;
+}
+
 .rel-el{
   position: relative;
 }
