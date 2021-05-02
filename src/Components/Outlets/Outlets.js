@@ -87,7 +87,7 @@ const Outlets = () => {
                                                             <Row>
 
                                                             {
-                                                                outlet.slice(pagination.start,pagination.end).map(outlet => <Col sm={6} lg={4}  key={outlet.id}>
+                                                                outlet.slice(pagination.start,pagination.end).map(outlet => <Col sm={6} lg={4} key={outlet.id}>
                                                                                         <OutletCard outlet={outlet}></OutletCard>
                                                                                     </Col>
                                                                           )
