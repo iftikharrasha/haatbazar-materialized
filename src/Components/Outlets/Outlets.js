@@ -5,6 +5,7 @@ import OutletCard from '../OutletCard/OutletCard';
 import catToggle from '../../img/toggler-icon.svg';
 import './Outlets.css';
 import outletData from '../../fakeData/data.json';
+import Pagination from '../Pagination/Pagination';
 
 const Outlets = () => {
     const [outlet, setOutlet] = useState([]);
@@ -13,6 +14,17 @@ const Outlets = () => {
       console.log(outletData);
     }, [])
 
+    const [showPerPage, setShowPerPage] = useState(9);
+
+    const [pagination, setPagination] = useState({
+        start: 0,
+        end: showPerPage,
+    });
+
+    const onPaginationChange = (start, end) => {
+        setPagination({start:start, end:end});
+    };
+ 
     function activeDrawer(){
         document.getElementById('toggle-in').classList.toggle('bmd-drawer-in');
         document.getElementById('overlay-in').classList.toggle('in');
@@ -75,12 +87,13 @@ const Outlets = () => {
                                                             <Row>
 
                                                             {
-                                                                outlet.map(outlet => <Col sm={6} lg={4}>
-                                                                                        <OutletCard outlet={outlet} key={outlet.key}></OutletCard>
+                                                                outlet.slice(pagination.start,pagination.end).map(outlet => <Col sm={6} lg={4}  key={outlet.id}>
+                                                                                        <OutletCard outlet={outlet}></OutletCard>
                                                                                     </Col>
                                                                           )
                                                             }
                                                             </Row>
+                                                            <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={outlet.length}></Pagination>
                                                         </Col>
                                                     </Row>
                                         </main>

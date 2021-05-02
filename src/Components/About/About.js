@@ -1,15 +1,44 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
 import youtube from '../../img/youtube.svg';
 import statue from '../../img/statue.svg';
 import rasha from '../../img/rasha.svg';
 import arif from '../../img/arif.svg';
 import diti from '../../img/diti.svg';
+import you from '../../img/you.svg';
 import phone from '../../img/phone.svg';
 import mail from '../../img/mail.svg';
 import './About.css';
 
-const About = () => {
+const About = (props) => {
+    const [modalShow, setModalShow] = React.useState(false);
+
+    function MyVerticallyCenteredModal(props) {
+        return (
+          <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                NSU Haatbazar
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className="embed-responsive embed-responsive-16by9">
+                    <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/lPOyaHAItAw" id="video"  allowFullScreen="always" allow="autoplay"></iframe>
+                </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        );
+      }
+
     return (
         <>
             <section className="about">
@@ -49,10 +78,15 @@ const About = () => {
                                                 <h2 className="semi-50 c-tag-2">NSU Haatbazar</h2>
                                             </Col>
                                             <Col sm={5} className="d-sm-block d-none text-right">
-                                                    <button type="button" className="btn-tag-2" data-toggle="modal" data-src="https://www.youtube.com/embed/GcHVFJhEyI4" data-target="#myModal">
+                                                    <Button className="btn-tag-2" onClick={() => setModalShow(true)}>
                                                         <img className="img-fluid pr-3" src={youtube} alt="youtube"/>
-                                                        Let's Connect
-                                                    </button>
+                                                        Watch
+                                                    </Button>
+
+                                                    <MyVerticallyCenteredModal
+                                                        show={modalShow}
+                                                        onHide={() => setModalShow(false)}
+                                                    />
                                             </Col>
                                             <Col>
                                                 <div className="pt-4">
@@ -83,31 +117,48 @@ const About = () => {
                                             </Col>
 
                                             <Col sm={12} className="d-sm-none d-block pt-3">
-                                                    <button type="button" className="btn-tag-2" data-toggle="modal" data-src="https://www.youtube.com/embed/GcHVFJhEyI4" data-target="#myModal">
+                                                    <Button className="btn-tag-2" onClick={() => setModalShow(true)}>
                                                         <img className="img-fluid pr-3" src={youtube} alt="youtube"/>
                                                         Let's Connect
-                                                    </button>
+                                                    </Button>
+
+                                                    <MyVerticallyCenteredModal
+                                                        show={modalShow}
+                                                        onHide={() => setModalShow(false)}
+                                                    />
+                                            </Col>
+                                        </Row>
+                                        <Row className="pt-5">
+                                            <Col>
+                                                <h2 className="semi-50 c-tag-2">The Team</h2>
+                                                <p className="light-28">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem magnam beatae nostrum voluptas qui repellat necessitatibus quam impedit.</p>
                                             </Col>
                                         </Row>
                                         <Row className="py-5">
                                             <Col md={6}>
                                                 <div className="members-list">
-                                                    <div className="member py-5">
+                                                    <div className="member py-3">
                                                         <img className="img-fluid" src={rasha} alt="rasha"/>
                                                         <span className="medi-20 pl-5">
                                                             Iftikhar Rasha
                                                         </span>
                                                     </div>
-                                                    <div className="member py-5">
+                                                    <div className="member py-3">
                                                         <img className="img-fluid" src={arif} alt="arif"/>
                                                         <span className="medi-20 pl-5">
                                                             Arif Jawad
                                                         </span>
                                                     </div>
-                                                    <div className="member py-5">
+                                                    <div className="member py-3">
                                                         <img className="img-fluid" src={diti} alt="diti"/>
                                                         <span className="medi-20 pl-5">
                                                             Roksana Diti
+                                                        </span>
+                                                    </div>
+                                                    <div className="member py-3">
+                                                        <img className="img-fluid" src={you} alt="you"/>
+                                                        <span className="medi-20 pl-5">
+                                                            And you :)
                                                         </span>
                                                     </div>
                                                 </div>
@@ -119,30 +170,31 @@ const About = () => {
                                         <Row className="py-5 contact-field">
                                             <Col md={5} className="d-flex justify-content-center align-items-center">
                                                 <div className="address">
-                                                    <p class="c-tag-7 semi-25 pt-3">
+                                                    <p className="c-tag-7 semi-25 pt-3 mb-0">
                                                         North South University
                                                     </p>
-                                                    <h4 class="c-tag-7 medi-20 pb-4">
+                                                    <h4 className="c-tag-7 medi-20 pb-4">
                                                         Dhaka, Bangladesh
                                                     </h4>
-                                                    <div class="contacts pb-5 pb-md-0">
-                                                        <p class="c-tag-7 medi-20 py-1">
-                                                            <img class="img-fluid pr-2" src={phone} alt="phone"/> 041 720 18 08
+                                                    <div className="contacts pb-5 pb-md-0">
+                                                        <p className="c-tag-7 medi-20 py-1">
+                                                            <img className="img-fluid pr-2" src={phone} alt="phone"/> 041 720 18 08
                                                         </p>
-                                                        <p class="c-tag-7 medi-20 py-1">
-                                                            <img class="img-fluid pr-2" src={mail} alt="mail"/> info@nsuhaatbazar.com
+                                                        <p className="c-tag-7 medi-20 py-1">
+                                                            <img className="img-fluid pr-2" src={mail} alt="mail"/> info@nsuhaatbazar.com
                                                         </p>
                                                     </div>
                                                 </div>
                                             </Col>
                                             <Col md={7} className="padding-zero iframe">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.097973575444!2d90.42336961536348!3d23.815114892216982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c64c103a8093%3A0xd660a4f50365294a!2sNorth%20South%20University!5e0!3m2!1sen!2sbd!4v1619974237033!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.097973575444!2d90.42336961536348!3d23.815114892216982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c64c103a8093%3A0xd660a4f50365294a!2sNorth%20South%20University!5e0!3m2!1sen!2sbd!4v1619974237033!5m2!1sen!2sbd" allowFullScreen="" loading="lazy"></iframe>
                                             </Col>
                                         </Row>
                                     </Col>
                                 </Row>
                         </div>
-                </Container>  
+                </Container>
+
             </section>
             
         </>

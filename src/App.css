@@ -157,9 +157,9 @@ a:hover{
 }
 
 .btn-tag-2 {
-  background: transparent;
-  border: 3px solid #272727;
-  color: #272727;
+  background: transparent !important;
+  border: 3px solid #272727 !important;
+  color: #272727 !important;
   padding: 18px;
   max-width: 286px;
   height: 72px;
