@@ -40,7 +40,7 @@ const Pagination = ({ showPerPage, onPaginationChange, total }) => {
                             <li class={`page-item pageNumber ${index+1 === counter ? "active": null}`}>
                                 <a class="page-link" href="#" onClick={() => setCounter(index+1)}>{index+1}</a>
                             </li>
-                        )) 
+                        ))
                     }
                     
                     <li class="page-item next"><a class="page-link" href="#" onClick={() => onButtonClick('next')}>Next</a></li>

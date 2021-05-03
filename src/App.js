@@ -20,6 +20,7 @@ import Outlets from './Components/Outlets/Outlets';
 import Footer from './Components/Footer/Footer.js';
 import Faq from './Components/Faq/Faq.js';
 import About from './Components/About/About.js';
+import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy.js';
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
@@ -65,6 +66,13 @@ function App() {
                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                             <Header></Header>
                             <Faq></Faq>
+                            <Footer></Footer>
+                        </Suspense>
+                    </Route>
+                    <Route path="/privacy-policy">
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <PrivacyPolicy></PrivacyPolicy>
                             <Footer></Footer>
                         </Suspense>
                     </Route>

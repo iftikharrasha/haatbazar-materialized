@@ -18,7 +18,7 @@ const Footer = () => {
                         <Col sm={12} className="text-center">
                             <div className="foot-links pt-3">
                                 <Link to="/join-us" className="c-tag-3 reg-20">Join Us </Link>
-                                <Link to="/privacy" className="c-tag-3 reg-20">| Privacy Policy </Link>
+                                <Link to="/privacy-policy" className="c-tag-3 reg-20">| Privacy Policy </Link>
                                 <Link to="/faq" className="c-tag-3 reg-20">| FAQ</Link>
                             </div>
                         </Col>

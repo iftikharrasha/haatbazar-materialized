@@ -9,6 +9,10 @@ import diti from '../../img/diti.svg';
 import you from '../../img/you.svg';
 import phone from '../../img/phone.svg';
 import mail from '../../img/mail.svg';
+import facebook from '../../img/facebook.svg';
+import instagram from '../../img/instagram.svg';
+import linkedin from '../../img/linkedin.svg';
+import caset from '../../img/caset.svg';
 import './About.css';
 
 const About = (props) => {
@@ -138,35 +142,85 @@ const About = (props) => {
                                             <Col md={6}>
                                                 <div className="members-list">
                                                     <div className="member py-3">
-                                                        <img className="img-fluid" src={rasha} alt="rasha"/>
-                                                        <span className="medi-20 pl-5">
-                                                            Iftikhar Rasha
-                                                        </span>
+                                                        <div className="member-img">
+                                                            <img className="img-fluid" src={rasha} alt="rasha"/>
+                                                        </div>
+                                                        <div className="member-info mt-lg-5 mt-sm-3">
+                                                            <span className="medi-20 pl-5">Iftikhar Rasha</span>
+                                                            <ul className="list-unstyled pl-5">
+                                                                <li className="mt-2">
+                                                                    <ul className="list-inline social-icons">
+                                                                        <li className="list-inline-item">
+                                                                            <a href=""><img className="img-fluid pr-3" src={facebook} alt="facebook"/></a>
+                                                                        </li>
+                                                                        <li className="list-inline-item">
+                                                                            <a href=""><img className="img-fluid pr-3" src={instagram} alt="instagram"/></a>
+                                                                        </li>
+                                                                        <li className="list-inline-item">
+                                                                            <a href=""><img className="img-fluid pr-3" src={linkedin} alt="linkedin"/></a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                     <div className="member py-3">
-                                                        <img className="img-fluid" src={arif} alt="arif"/>
-                                                        <span className="medi-20 pl-5">
-                                                            Arif Jawad
-                                                        </span>
+                                                            <div className="member-img">
+                                                                <img className="img-fluid" src={arif} alt="rasha"/>
+                                                            </div>
+                                                            <div className="member-info mt-lg-5 mt-3">
+                                                                <span className="medi-20 pl-5">Arif Jawad</span>
+                                                                <ul className="list-unstyled pl-5">
+                                                                    <li className="mt-2">
+                                                                        <ul className="list-inline social-icons">
+                                                                            <li className="list-inline-item">
+                                                                                <a href=""><img className="img-fluid pr-3" src={facebook} alt="facebook"/></a>
+                                                                            </li>
+                                                                            <li className="list-inline-item">
+                                                                                <a href=""><img className="img-fluid pr-3" src={instagram} alt="instagram"/></a>
+                                                                            </li>
+                                                                            <li className="list-inline-item">
+                                                                                <a href=""><img className="img-fluid pr-3" src={linkedin} alt="linkedin"/></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                     </div>
                                                     <div className="member py-3">
-                                                        <img className="img-fluid" src={diti} alt="diti"/>
-                                                        <span className="medi-20 pl-5">
-                                                            Roksana Diti
-                                                        </span>
-                                                    </div>
-                                                    <div className="member py-3">
-                                                        <img className="img-fluid" src={you} alt="you"/>
-                                                        <span className="medi-20 pl-5">
-                                                            And you :)
-                                                        </span>
+                                                            <div className="member-img">
+                                                                <img className="img-fluid" src={diti} alt="rasha"/>
+                                                            </div>
+                                                            <div className="member-info mt-lg-5 mt-sm-3">
+                                                                    <span className="medi-20 pl-5">Roksana Diti</span>
+                                                                    <ul className="list-unstyled pl-5">
+                                                                        <li className="mt-2">
+                                                                            <ul className="list-inline social-icons">
+                                                                                <li className="list-inline-item">
+                                                                                    <a href=""><img className="img-fluid pr-3" src={facebook} alt="facebook"/></a>
+                                                                                </li>
+                                                                                <li className="list-inline-item">
+                                                                                    <a href=""><img className="img-fluid pr-3" src={instagram} alt="instagram"/></a>
+                                                                                </li>
+                                                                                <li className="list-inline-item">
+                                                                                    <a href=""><img className="img-fluid pr-3" src={linkedin} alt="linkedin"/></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </Col>
-                                            <Col md={6} className="d-flex align-items-center">
-                                                <img className="img-fluid" src={statue} alt="statue"/>
+                                            <Col md={6} className="d-flex justify-content-center align-items-center">
+                                                <img className="img-fluid" src={caset} alt="caset"/>
                                             </Col>
                                         </Row>
+                                        {/* <Row>
+                                            <Col>
+                                                <p className="light-28">And you.</p>
+                                            </Col>
+                                        </Row> */}
                                         <Row className="py-5 contact-field">
                                             <Col md={5} className="d-flex justify-content-center align-items-center">
                                                 <div className="address">

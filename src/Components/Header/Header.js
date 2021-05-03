@@ -21,9 +21,9 @@ const Header = () => {
             <header className={scroll ? "header-sticky" : "header"}>
                 <div className="container">
                         <nav className="navbarItems">
-                            <a href="/home" className="navbar-logo">
+                            <Link to="/home" className="navbar-logo">
                                 <img src={logo} width="80%" className="d-inline-block align-top" alt="logo"/>
-                            </a>
+                            </Link>
 
                              <div className="menu-icon" id="toggle-btn" onClick={activeToggle}>
                                 <svg width="50" height="50" viewBox="0 0 100 100">

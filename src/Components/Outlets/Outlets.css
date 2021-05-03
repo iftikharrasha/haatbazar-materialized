@@ -6,6 +6,28 @@
     margin-top: 150px !important;
 }
 
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+    float: left;
+}
+
+.form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 4.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.form-control {
+    padding-left: 3.375rem;
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .mt--250-div {
