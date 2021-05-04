@@ -9,7 +9,6 @@ const Card = (props) => {
 
     return (
         <>
-            {/* card starts  */}
             <div className="cards d-flex justify-content-center">
                        <div className="card_in">
                            <div className="card_top">
@@ -39,7 +38,6 @@ const Card = (props) => {
                            </div>
                        </div>
             </div>
-            {/* card ends  */}
         </>
     );
 };

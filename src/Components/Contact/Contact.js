@@ -1,9 +1,32 @@
 import React from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
 import { Button } from '@material-ui/core';
 import './Contact.css';
 
 const Contact = () => {
+    const [contactModalShow, setContactModalShow] = React.useState(false);
+
+    function MyVerticallyCenteredModal2(props) {
+        return (
+          <Modal
+            {...props}
+            size="md"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Body>
+                <div className="text-center">
+                    <h5>Thanks for your submission.</h5>
+                    <div className="pt-2">
+                        <Button onClick={props.onHide}>Close</Button>
+                    </div>
+                </div>
+            </Modal.Body>
+          </Modal>
+        );
+      }
+
     return (
         <>
             <section className="contact">
@@ -48,9 +71,14 @@ const Contact = () => {
                                                         </Col>
                                                         <Col lg={12}>
                                                             <div className="text-center">
-                                                                <Button variant="outlined" color="secondary" className="px-4">
+                                                                <Button variant="outlined" color="secondary" className="px-4" onClick={() => setContactModalShow(true)}>
                                                                     Submit
                                                                 </Button>
+
+                                                                <MyVerticallyCenteredModal2
+                                                                    show={contactModalShow}
+                                                                    onHide={() => setContactModalShow(false)}
+                                                                />
                                                             </div>
                                                             <div className="pt-80"></div>
                                                         </Col>

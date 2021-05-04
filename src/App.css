@@ -8,6 +8,30 @@ a:hover{
 	text-decoration:none;
 }
 
+.page{
+    position:relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.fade-enter{
+  opacity: 0;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-enter-active{
+  opacity: 1;
+}
+.fade-exit-active{
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active{
+  transition: opacity 400ms;
+}
+
 .hero, .album, .cat-card, .brands, .outlets, .about, .profile, .related, .notFound, .faq, .contact{
   margin-top: 120px;
 }

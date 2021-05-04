@@ -2,11 +2,9 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import youtube from '../../img/youtube.svg';
-import statue from '../../img/statue.svg';
 import rasha from '../../img/rasha.svg';
 import arif from '../../img/arif.svg';
 import diti from '../../img/diti.svg';
-import you from '../../img/you.svg';
 import phone from '../../img/phone.svg';
 import mail from '../../img/mail.svg';
 import facebook from '../../img/facebook.svg';
@@ -123,7 +121,7 @@ const About = (props) => {
                                             <Col sm={12} className="d-sm-none d-block pt-3">
                                                     <Button className="btn-tag-2" onClick={() => setModalShow(true)}>
                                                         <img className="img-fluid pr-3" src={youtube} alt="youtube"/>
-                                                        Let's Connect
+                                                        Watch
                                                     </Button>
 
                                                     <MyVerticallyCenteredModal

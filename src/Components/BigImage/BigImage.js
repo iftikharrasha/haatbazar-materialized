@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../img/gallery.jpg';
+import '../../img/callout.png';
 import './BigImage.css';
 
 const BigImage = () => {

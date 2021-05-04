@@ -23,86 +23,112 @@ import About from './Components/About/About.js';
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy.js';
 import Contact from './Components/Contact/Contact.js';
 import BigImage from './Components/BigImage/BigImage.js';
+import {
+    CSSTransition,
+    TransitionGroup,
+  } from 'react-transition-group';
+
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
+
 
 function App() {
     
   return (
     <div className="App">
         <Router>
+            <Header></Header>
             <ScrollToTop>
-                <Switch>
-                    <Route path="/home">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <Hero></Hero>
-                            <Album></Album>
-                            <CategoryCard></CategoryCard>
-                            <Brand></Brand>
-                            <BigImage></BigImage>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route path="/outlets">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <Outlets></Outlets>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route path="/profile/:outletKey">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <Profile></Profile>
-                            <Related></Related>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route path="/about">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <About></About>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route path="/contact">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <Contact></Contact>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route path="/faq">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <Faq></Faq>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route path="/privacy-policy">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <PrivacyPolicy></PrivacyPolicy>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route exact path="/">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <Hero></Hero>
-                            <Album></Album>
-                            <CategoryCard></CategoryCard>
-                            <Brand></Brand>
-                            <Footer></Footer>
-                        </Suspense>
-                    </Route>
-                    <Route path="*">
-                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                            <Header></Header>
-                            <NotFound></NotFound>
-                        </Suspense>
-                    </Route>
-                </Switch>
+                 <Route render={({location}) => (
+                     <TransitionGroup>
+                        <CSSTransition
+                        key={location.key}
+                        timeout={300}
+                        classNames="fade"
+                        >
+                            <Switch location={location}>
+                                <Route path="/home">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <Hero></Hero>
+                                            <Album></Album>
+                                            <CategoryCard></CategoryCard>
+                                            <Brand></Brand>
+                                            <BigImage></BigImage>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route path="/outlets">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <Outlets></Outlets>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route path="/profile/:outletKey">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <Profile></Profile>
+                                            <Related></Related>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route path="/about">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <About></About>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route path="/contact">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <Contact></Contact>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route path="/faq">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <Faq></Faq>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route path="/privacy-policy">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <PrivacyPolicy></PrivacyPolicy>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route exact path="/">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <Hero></Hero>
+                                            <Album></Album>
+                                            <CategoryCard></CategoryCard>
+                                            <Brand></Brand>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                                <Route path="*">
+                                    <div className="page">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <NotFound></NotFound>
+                                        </Suspense>
+                                    </div>
+                                </Route>
+                            </Switch>
+                        </CSSTransition>
+                    </TransitionGroup>
+                 )} />
             </ScrollToTop>
         </Router>
         
