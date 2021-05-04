@@ -21,6 +21,8 @@ import Footer from './Components/Footer/Footer.js';
 import Faq from './Components/Faq/Faq.js';
 import About from './Components/About/About.js';
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy.js';
+import Contact from './Components/Contact/Contact.js';
+import BigImage from './Components/BigImage/BigImage.js';
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
                             <Album></Album>
                             <CategoryCard></CategoryCard>
                             <Brand></Brand>
+                            <BigImage></BigImage>
                             <Footer></Footer>
                         </Suspense>
                     </Route>
@@ -59,6 +62,13 @@ function App() {
                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                             <Header></Header>
                             <About></About>
+                            <Footer></Footer>
+                        </Suspense>
+                    </Route>
+                    <Route path="/contact">
+                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                            <Header></Header>
+                            <Contact></Contact>
                             <Footer></Footer>
                         </Suspense>
                     </Route>

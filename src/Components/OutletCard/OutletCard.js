@@ -11,7 +11,7 @@ const OutletCard = (props) => {
     return (
         <>
             {/* card starts  */}
-            <div className="cards cards-2">
+            <div className="cards cards-2 cards d-flex justify-content-center">
                        <div className="card_in">
                            <div className="card_top">
                                 <Link to={"/profile/"+key}>

@@ -64,10 +64,10 @@ const Outlets = () => {
                             <Row className="pt-5">
                                 <Col sm={7} className="mx-auto">
                                     <form>
-                                        <div class="inner-form">
-                                            <div class="form-group">
-                                                <span class="fa fa-search form-control-feedback" aria-hidden="true"></span>
-                                                <input id="keyword" type="text" class="form-control" placeholder="START TYPING.." onChange={event => setSearchTerm(event.target.value)}/>
+                                        <div className="inner-form">
+                                            <div className="form-group">
+                                                <span className="fa fa-search form-control-feedback" aria-hidden="true"></span>
+                                                <input id="keyword" type="text" className="form-control fc-input" placeholder="START TYPING . . ." onChange={event => setSearchTerm(event.target.value)}/>
                                             </div>
                                         </div>
                                     </form>
@@ -81,7 +81,7 @@ const Outlets = () => {
                                                         <img src={catToggle} alt="toggle"/>
                                                     </button>
                                                     <ul className="nav navbar-nav">
-                                                        <li className="nav-item">Showing: {searchTerm}</li>
+                                                        <li className="nav-item">Showing: All</li>
                                                     </ul>
                                                 </div>
                                             </header>
@@ -90,14 +90,13 @@ const Outlets = () => {
                                                     <a className="navbar-brand semi-50">Categories</a>
                                                 </header>
                                                 <div className="cat-height">
-                                                    <Categories></Categories>
+                                                    <Categories outlet={outlet}></Categories>
                                                 </div>
                                             </div>
                                             <main className="bmd-layout-content">
                                                         <Row>
                                                             <Col lg={11} className="offset-lg-1">
                                                                 <Row>
-
                                                                 {
                                                                     outlet.filter((outlet) => {
                                                                         if(searchTerm == ""){
@@ -109,7 +108,7 @@ const Outlets = () => {
                                                                                         <Col sm={6} lg={4} key={outlet.id}>
                                                                                             <OutletCard outlet={outlet}></OutletCard>
                                                                                         </Col>
-                                                                            )
+                                                                        )
                                                                 }
                                                                 </Row>
                                                                 <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={outlet.length}></Pagination>
