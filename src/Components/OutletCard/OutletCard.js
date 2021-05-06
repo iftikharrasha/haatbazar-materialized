@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -8,6 +8,21 @@ import './OutletCard.css';
 const OutletCard = (props) => {
     const {outlet, img, react, views, key} = props.outlet;
 
+    const [count, setCount] = useState(0);
+    const handleIncrease = () => {
+      const newCount = count + 1;
+      setCount(newCount);
+    }
+
+    const loveStyle = {
+      color: (()=>{
+          if(count < 1){
+            return '#ABB6C1'
+          }else{
+            return '#EF4B69'
+          }
+      })()
+    }
     return (
         <>
             {/* card starts  */}
@@ -24,8 +39,8 @@ const OutletCard = (props) => {
                                    <h4>{outlet}</h4>
                                    <div className="reactions">
                                         <div className="chart-1">
-                                            <button type="button">
-                                                <i className="fa fa-heart"> {react}</i>
+                                            <button type="button" onClick={handleIncrease}>
+                                                <i className="fa fa-heart" style={loveStyle}></i> {react + count}
                                             </button>
                                         </div>
                                         <div className="chart-2">

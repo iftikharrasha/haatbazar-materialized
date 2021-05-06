@@ -80,14 +80,6 @@
     border-radius: 6px;
 }
 
-.photo-main img, .photo-album li img{
-    max-width: 100%;
-}
-
-.photo-album li img:hover {
-    border: 1px solid #C4E7C9;
-}
-
 .photo-album {
     padding: 0.7em 1em;
     border-radius: 0 0 6px 6px;
@@ -104,11 +96,24 @@
     float: left;
     width: 80px;
     height: 80px;
-    padding: 7px;
     border-radius: 3px;
 	list-style: none;
     cursor: pointer;
 }
+
+.photo-main img, .photo-album li img{
+    max-width: 100%;
+}
+
+.photo-album li img{
+    width: 80px;
+    height: 80px;
+}
+
+.photo-album li img:hover {
+    border: 1px solid #C4E7C9;
+}
+
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

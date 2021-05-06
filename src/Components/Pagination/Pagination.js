@@ -32,18 +32,18 @@ const Pagination = ({ showPerPage, onPaginationChange, total }) => {
                 <button className="btn btn-primary" onClick={() => onButtonClick('next')}>Next</button> */}
 
                 <nav aria-label="Page navigation example">
-                <ul class="pagination page-ul">
-                    <li class="page-item prev"><a class="page-link" href="#" onClick={() => onButtonClick('prev')}>Previous</a></li>
+                <ul className="pagination page-ul">
+                    <li className="page-item prev"><a className="page-link" href="#" onClick={() => onButtonClick('prev')}>Previous</a></li>
                     
                     {
                         new Array(numberOfButtons).fill("").map((el, index) => (
-                            <li class={`page-item pageNumber ${index+1 === counter ? "active": null}`}>
-                                <a class="page-link" href="#" onClick={() => setCounter(index+1)}>{index+1}</a>
+                            <li className={`page-item pageNumber ${index+1 === counter ? "active": null}`}>
+                                <a className="page-link" href="#" onClick={() => setCounter(index+1)}>{index+1}</a>
                             </li>
                         ))
                     }
                     
-                    <li class="page-item next"><a class="page-link" href="#" onClick={() => onButtonClick('next')}>Next</a></li>
+                    <li className="page-item next"><a className="page-link" href="#" onClick={() => onButtonClick('next')}>Next</a></li>
                 </ul>
                 </nav>
             </div>

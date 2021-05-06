@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
 import productOne from '../../uploads/products/theminusplan_3_0.jpg';
-import productTwo from '../../uploads/products/theminusplan_3_1.jpg';
-import productThree from '../../uploads/products/theminusplan_3_2.jpg';
-import productFour from '../../uploads/products/theminusplan_3_3.jpg';
+// import productTwo from '../../uploads/products/theminusplan_3_1.jpg';
+// import productThree from '../../uploads/products/theminusplan_3_2.jpg';
+// import productFour from '../../uploads/products/theminusplan_3_3.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Profile.css';
@@ -17,27 +17,43 @@ const Profile = (props) => {
     const outletDetail = outletData.find(brand => brand.key === outletKey);
     console.log(outletDetail);
 
-    const {outlet, title, img, description, owner, department, react, views, category, datetime} = outletDetail;
+    const {outlet, title, img, description, owner, department, react, views, category, datetime, products} = outletDetail;
+
+    const [count, setCount] = useState(0);
+    const handleIncrease = () => {
+      const newCount = count + 1;
+      setCount(newCount);
+    }
+
+    const loveStyle = {
+      color: (()=>{
+          if(count < 1){
+            return '#ABB6C1'
+          }else{
+            return '#EF4B69'
+          }
+      })()
+    }
 
     function clickedOne(e) {
         e.preventDefault();
         document.getElementById('img-holder').src=productOne;
     }
 
-    function clickedTwo(e) {
-        e.preventDefault();
-        document.getElementById('img-holder').src=productTwo;
-    }
+    // function clickedTwo(e) {
+    //     e.preventDefault();
+    //     document.getElementById('img-holder').src=productTwo;
+    // }
 
-    function clickedThree(e) {
-        e.preventDefault();
-        document.getElementById('img-holder').src=productThree;
-    }
+    // function clickedThree(e) {
+    //     e.preventDefault();
+    //     document.getElementById('img-holder').src=productThree;
+    // }
 
-    function clickedFour(e) {
-        e.preventDefault();
-        document.getElementById('img-holder').src=productFour;
-    }
+    // function clickedFour(e) {
+    //     e.preventDefault();
+    //     document.getElementById('img-holder').src=productFour;
+    // }
 
     return (
         <>
@@ -46,17 +62,17 @@ const Profile = (props) => {
                 <div className="cover">
 
                         <svg className="cover-svg" viewBox="0 0 1920 638" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0)">
-                        <path d="M0 0H1920V450.672L0 638V0Z" fill="#CCDEE2"/>
-                        <path d="M388 118C388 182.617 335.617 235 271 235C206.383 235 154 182.617 154 118L154 17C154 -47.6173 206.383 -100 271 -100C335.617 -100 388 -47.6173 388 17L388 118Z" fill="#77E0B5"/>
-                        <rect x="423" y="-267" width="115" height="659" rx="57.5" fill="#FCC8DF"/>
-                        <rect x="573" y="-516" width="115" height="659" rx="57.5" fill="#FCDC3D"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0">
-                        <rect width="1920" height="638" fill="white"/>
-                        </clipPath>
-                        </defs>
+                            <g clipPath="url(#clip0)">
+                            <path d="M0 0H1920V450.672L0 638V0Z" fill="#CCDEE2"/>
+                            <path d="M388 118C388 182.617 335.617 235 271 235C206.383 235 154 182.617 154 118L154 17C154 -47.6173 206.383 -100 271 -100C335.617 -100 388 -47.6173 388 17L388 118Z" fill="#77E0B5"/>
+                            <rect x="423" y="-267" width="115" height="659" rx="57.5" fill="#FCC8DF"/>
+                            <rect x="573" y="-516" width="115" height="659" rx="57.5" fill="#FCDC3D"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0">
+                            <rect width="1920" height="638" fill="white"/>
+                            </clipPath>
+                            </defs>
                         </svg>
 
                 </div>
@@ -72,8 +88,8 @@ const Profile = (props) => {
                                                 <span> {views}</span>
                                         </Col>
                                         <Col md={9} sm={4} className="offset-md-3 text-md-left text-right col-4">
-                                                <i className="fa fa-heart c-tag-2"></i>
-                                                <span> {react}</span>
+                                                <i className="fa fa-heart c-tag-2" style={loveStyle} onClick={handleIncrease}></i>
+                                                <span> {react + count}</span>
                                         </Col>
                                         <Col md={9} className="offset-md-3 pt-3 offset-2 col-10">
                                                 <p className="c-tag-2">#{category}</p>
@@ -129,18 +145,14 @@ const Profile = (props) => {
 													
 													<div className="photo-album">
 														<ul>
-															<li>
-																<LazyLoadImage effect="blur" onClick={clickedOne} src={productOne} alt="green apple"/>
-															</li>
-															<li>
-                                                                <LazyLoadImage effect="blur" onClick={clickedTwo} src={productTwo} alt="green apple"/>
-															</li>
-															<li>
-                                                                <LazyLoadImage effect="blur" onClick={clickedThree} src={productThree} alt="green apple"/>
-															</li>
-															<li>
-                                                                <LazyLoadImage effect="blur" onClick={clickedFour} src={productFour} alt="green apple"/>
-															</li>
+
+                                                            {
+                                                            products.map(product => 
+                                                                <li>
+																    <LazyLoadImage effect="blur" className="img-fluid" onClick={clickedOne} src={product.product} alt="green apple"/>
+															    </li>
+                                                            )
+                                                            }
 														</ul>
 													</div>
 												</div>

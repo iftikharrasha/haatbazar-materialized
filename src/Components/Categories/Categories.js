@@ -9,19 +9,15 @@ const Categories = (props) => {
 
     return (
         <>
-        
-                                        <ul className="list-group product-categories">
-
-                                            {
-                                                categories.map(cat => 
-                                                    <li>
-                                                        <a href="#" className="reg-20 list-group-item">{cat}<span className="count">34</span></a>
-                                                    </li>
-                                                )
-                                            }
-
-
-                                        </ul>
+            <ul className="list-group product-categories">
+                {
+                    categories.map(cat => 
+                        <li>
+                            <a href="#" className="reg-20 list-group-item">{cat}<span className="count">34</span></a>
+                        </li>
+                                    )
+                }
+            </ul>
         </>
     );
 };
