@@ -3,9 +3,6 @@ import { useParams } from 'react-router';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
 import productOne from '../../uploads/products/theminusplan_3_0.jpg';
-// import productTwo from '../../uploads/products/theminusplan_3_1.jpg';
-// import productThree from '../../uploads/products/theminusplan_3_2.jpg';
-// import productFour from '../../uploads/products/theminusplan_3_3.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Profile.css';
@@ -15,10 +12,11 @@ const Profile = (props) => {
 
     const { outletKey } = useParams();
     const outletDetail = outletData.find(brand => brand.key === outletKey);
-    console.log(outletDetail);
+    // console.log(outletDetail);
 
     const {outlet, title, img, description, owner, department, react, views, category, datetime, products} = outletDetail;
 
+    //heart react starts
     const [count, setCount] = useState(0);
     const handleIncrease = () => {
       const newCount = count + 1;
@@ -34,26 +32,15 @@ const Profile = (props) => {
           }
       })()
     }
+    //heart react ends
 
-    function clickedOne(e) {
-        e.preventDefault();
-        document.getElementById('img-holder').src=productOne;
+    //image snippet starts
+    const clickedOne = bigImg => {
+        document.getElementById('img-holder').src=bigImg;
     }
 
-    // function clickedTwo(e) {
-    //     e.preventDefault();
-    //     document.getElementById('img-holder').src=productTwo;
-    // }
-
-    // function clickedThree(e) {
-    //     e.preventDefault();
-    //     document.getElementById('img-holder').src=productThree;
-    // }
-
-    // function clickedFour(e) {
-    //     e.preventDefault();
-    //     document.getElementById('img-holder').src=productFour;
-    // }
+    let firstImg = products[Object.keys(products)[0]]; 
+    //image snippet ends
 
     return (
         <>
@@ -88,7 +75,7 @@ const Profile = (props) => {
                                                 <span> {views}</span>
                                         </Col>
                                         <Col md={9} sm={4} className="offset-md-3 text-md-left text-right col-4">
-                                                <i className="fa fa-heart c-tag-2" style={loveStyle} onClick={handleIncrease}></i>
+                                                <i className="fa fa-heart c-tag-2" style={loveStyle} onClick={() => handleIncrease}></i>
                                                 <span> {react + count}</span>
                                         </Col>
                                         <Col md={9} className="offset-md-3 pt-3 offset-2 col-10">
@@ -140,7 +127,7 @@ const Profile = (props) => {
                                             <div className="product__photo">
 												<div className="photo-container">
 													<div className="photo-main">
-														<LazyLoadImage effect="blur" src={productOne} alt="product" id="img-holder"/>
+														<LazyLoadImage effect="blur" src={firstImg.product} alt="product" id="img-holder"/>
 													</div>
 													
 													<div className="photo-album">
@@ -149,7 +136,7 @@ const Profile = (props) => {
                                                             {
                                                             products.map(product => 
                                                                 <li>
-																    <LazyLoadImage effect="blur" className="img-fluid" onClick={clickedOne} src={product.product} alt="green apple"/>
+																    <LazyLoadImage effect="blur" className="img-fluid" onClick={() => clickedOne(product.product)} src={product.product} alt="green apple"/>
 															    </li>
                                                             )
                                                             }

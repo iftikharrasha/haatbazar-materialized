@@ -41,14 +41,14 @@ const Card = (props) => {
                                    </p>
                                    <div className="reactions">
                                         <div className="chart-1">
-                                            <button type="button" onClick={handleIncrease}>
+                                            <button type="button" className="react" onClick={handleIncrease}>
                                                 <i className="fa fa-heart" style={loveStyle}></i> {react + count}
                                             </button>
                                         </div>
                                         <div className="chart-2">
-                                            <button type="button">
+                                            <div className="view">
                                                 <i className="fa fa-eye"></i> {views}
-                                            </button>
+                                            </div>
                                         </div>
                                     </div>
                            </div>

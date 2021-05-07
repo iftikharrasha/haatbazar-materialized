@@ -51,7 +51,6 @@
     border-radius: 40px;
     padding: 5%;
     background: linear-gradient(236.57deg, #e6b8ff 28.47%, #ccdee2 70.92%);
-    cursor: pointer;
 }
 
 .card_top {
@@ -109,7 +108,7 @@
     width: 50%;
 }
 
-.chart-1 button, .chart-2 button {
+.chart-1 .react, .chart-2 .view {
     width: 80%;
     background-color: transparent;
     border-radius: 10px;
@@ -117,6 +116,16 @@
     color: white;
     padding: 1% 5%;
 }
+
+
+/* .chart-1 .react {
+    border: 2px solid black;
+} */
+
+.chart-2 .view {
+    padding: 2% 5%;
+}
+
 
 .chart-2 button a i {
 	color: white;

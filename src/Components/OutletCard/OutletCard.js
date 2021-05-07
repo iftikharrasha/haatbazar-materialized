@@ -39,14 +39,14 @@ const OutletCard = (props) => {
                                    <h4>{outlet}</h4>
                                    <div className="reactions">
                                         <div className="chart-1">
-                                            <button type="button" onClick={handleIncrease}>
+                                            <button type="button" className="react" onClick={handleIncrease}>
                                                 <i className="fa fa-heart" style={loveStyle}></i> {react + count}
                                             </button>
                                         </div>
                                         <div className="chart-2">
-                                            <button type="button">
-                                                <a href=""><i className="fa fa-eye"> {views}</i></a>
-                                            </button>
+                                            <div className="view">
+                                                <i className="fa fa-eye"></i> {views}
+                                            </div>
                                         </div>
                                     </div>
                            </div>

@@ -102,12 +102,20 @@
 }
 
 .photo-main img, .photo-album li img{
-    max-width: 100%;
+    width: 100%;
+    height: 556px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
 }
 
 .photo-album li img{
-    width: 80px;
-    height: 80px;
+    width: 78px;
+    height: 78px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .photo-album li img:hover {

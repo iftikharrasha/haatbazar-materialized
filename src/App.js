@@ -47,7 +47,6 @@ function App() {
                         >
                             <Switch location={location}>
                                 <Route path="/home">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <Hero></Hero>
                                             <Album></Album>
@@ -56,59 +55,45 @@ function App() {
                                             <BigImage></BigImage>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route path="/outlets">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <Outlets></Outlets>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route path="/profile/:outletKey">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <Profile></Profile>
                                             <Related></Related>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route path="/about">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <About></About>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route path="/contact">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <Contact></Contact>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route path="/faq">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <Faq></Faq>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route path="/privacy-policy">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <PrivacyPolicy></PrivacyPolicy>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route exact path="/">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <Hero></Hero>
                                             <Album></Album>
@@ -116,14 +101,11 @@ function App() {
                                             <Brand></Brand>
                                             <Footer></Footer>
                                         </Suspense>
-                                    </div>
                                 </Route>
                                 <Route path="*">
-                                    <div className="page">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <NotFound></NotFound>
                                         </Suspense>
-                                    </div>
                                 </Route>
                             </Switch>
                         </CSSTransition>
