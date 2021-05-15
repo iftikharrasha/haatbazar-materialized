@@ -4,6 +4,7 @@ import './Pagination.css';
 const Pagination = ({ showPerPage, onPaginationChange, total }) => {
     const [counter, setCounter] = useState(1);
     const [numberOfButtons, setNumberOfButtons] = useState(Math.ceil(total/showPerPage));
+    // console.log(numberOfButtons);
     useEffect(() => {
         const value = showPerPage * counter;
         onPaginationChange(value - showPerPage, value);
@@ -33,17 +34,17 @@ const Pagination = ({ showPerPage, onPaginationChange, total }) => {
 
                 <nav aria-label="Page navigation example">
                 <ul className="pagination page-ul">
-                    <li className="page-item prev"><a className="page-link" href="#" onClick={() => onButtonClick('prev')}>Previous</a></li>
+                    <li className="page-item prev"><a className="page-link" onClick={() => onButtonClick('prev')}>Previous</a></li>
                     
                     {
                         new Array(numberOfButtons).fill("").map((el, index) => (
                             <li className={`page-item pageNumber ${index+1 === counter ? "active": null}`}>
-                                <a className="page-link" href="#" onClick={() => setCounter(index+1)}>{index+1}</a>
+                                <a className="page-link" onClick={() => setCounter(index+1)}>{index+1}</a>
                             </li>
                         ))
                     }
                     
-                    <li className="page-item next"><a className="page-link" href="#" onClick={() => onButtonClick('next')}>Next</a></li>
+                    <li className="page-item next"><a className="page-link" onClick={() => onButtonClick('next')}>Next</a></li>
                 </ul>
                 </nav>
             </div>

@@ -97,6 +97,7 @@
     width: 80px;
     height: 80px;
     border-radius: 3px;
+    border: 1px solid #ccc;
 	list-style: none;
     cursor: pointer;
 }
@@ -107,7 +108,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid #ccc;
 }
 
 .photo-album li img{

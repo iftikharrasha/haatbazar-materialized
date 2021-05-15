@@ -7,7 +7,8 @@ import './CardSlider.css';
 import Card from '../Card/Card';
 import outletData from '../../fakeData/data.json';
 
-const CardSlider = () => {
+const CardSlider = (props) => {
+    const relCat = props.relatedCat;
     // const first5 = outletData.slice(0,5);
     // const [outlet, setOutlet] = useState(first5);
     const [outlet, setOutlet] = useState([]);
@@ -78,7 +79,7 @@ const CardSlider = () => {
 <Slider {...settings}>
 
                         {
-                          outlet.map(outlet => <Card outlet={outlet} key={outlet.key}></Card>)
+                          outlet.map(outlet => <Card outlet={outlet} key={outlet.key} category={relCat}></Card>)
                         }
 
 </Slider>

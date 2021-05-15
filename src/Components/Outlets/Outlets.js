@@ -8,13 +8,33 @@ import outletData from '../../fakeData/data.json';
 import Pagination from '../Pagination/Pagination';
 
 const Outlets = () => {
+    // delete
+    const allCategories = ['All', ...new Set(outletData.map((item) => item.category))];
+    const [categories] = useState(allCategories);
+
+    const [outlet, setOutlet] = useState(outletData);
+    const filterItems = (category) => {
+        if (category === 'All') {
+            document.getElementById('toggle-in').classList.toggle('bmd-drawer-in');
+            document.getElementById('overlay-in').classList.toggle('in');
+            setOutlet(outletData);
+          return;
+        }
+        const newItems = outletData.filter((item) => item.category === category);
+        document.getElementById('toggle-in').classList.toggle('bmd-drawer-in');
+        document.getElementById('overlay-in').classList.toggle('in');
+    
+        setOutlet(newItems);
+     };
+    // delete
+
     const [searchTerm, setSearchTerm] = useState('');
 
-    const [outlet, setOutlet] = useState([]);
-    useEffect(() => {
-      setOutlet(outletData);
-      console.log(outletData);
-    }, [])
+    // const [outlet, setOutlet] = useState([]);
+    // useEffect(() => {
+    //   setOutlet(outletData);
+    //   console.log(outletData);
+    // }, [])
 
     const [showPerPage, setShowPerPage] = useState(9);
 
@@ -76,7 +96,7 @@ const Outlets = () => {
                                     <div className="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay" id="toggle-in">
                                             <header className="bmd-layout-header">
                                                 <div className="navbar navbar-light bg-faded">
-                                                    <button className="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-p1" onClick={activeDrawer}>
+                                                    <button className="navbar-toggler" id="toggler-press" type="button" data-toggle="drawer" data-target="#dw-p1" onClick={activeDrawer}>
                                                         <span className="sr-only">Toggle drawer</span>
                                                         <img src={catToggle} alt="toggle"/>
                                                     </button>
@@ -90,7 +110,7 @@ const Outlets = () => {
                                                     <a className="navbar-brand semi-50">Categories</a>
                                                 </header>
                                                 <div className="cat-height">
-                                                    <Categories outlet={outlet}></Categories>
+                                                    <Categories filterItems={filterItems} categories={categories}></Categories>
                                                 </div>
                                             </div>
                                             <main className="bmd-layout-content">
@@ -98,7 +118,7 @@ const Outlets = () => {
                                                             <Col lg={11} className="offset-lg-1">
                                                                 <Row>
                                                                 {
-                                                                    outlet.filter((outlet) => {
+                                                                    outlet.filter(outlet => {
                                                                         if(searchTerm == ""){
                                                                             return outlet;
                                                                         }else if(outlet.category.toLowerCase().includes(searchTerm.toLowerCase()) || outlet.outlet.toLowerCase().includes(searchTerm.toLowerCase()) || outlet.title.toLowerCase().includes(searchTerm.toLowerCase())){

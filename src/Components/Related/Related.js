@@ -5,6 +5,8 @@ import CardSlider from '../CardSlider/CardSlider';
 import './Related.css';
 
 function Related(props) {
+    const relatedCat = props.category;
+
     return (
         <>
             <section className="related">
@@ -19,7 +21,7 @@ function Related(props) {
                         </Row>
                 </Container> 
                 
-                <CardSlider></CardSlider>
+                <CardSlider relatedCat={relatedCat}></CardSlider>
             </section>
         </>
     );

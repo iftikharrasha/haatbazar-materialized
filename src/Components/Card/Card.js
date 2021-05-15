@@ -16,9 +16,9 @@ const Card = (props) => {
     const loveStyle = {
       color: (()=>{
           if(count < 1){
-            return '#ABB6C1'
+            return '#ABB6C1';
           }else{
-            return '#EF4B69'
+            return '#EF4B69';
           }
       })()
     }

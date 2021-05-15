@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
-import productOne from '../../uploads/products/theminusplan_3_0.jpg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import './Profile.css';
 import outletData from '../../fakeData/data.json';
+import Related from '../Related/Related';
 
 const Profile = (props) => {
 
@@ -180,6 +180,8 @@ const Profile = (props) => {
                         </div>
                     </Container>
             </section>
+
+            <Related category={category}></Related>
         </>
     );
 };

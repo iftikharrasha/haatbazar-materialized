@@ -10,12 +10,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Album from './Components/Album/Album';
 import { Button } from 'react-bootstrap';
+import Album from './Components/Album/Album';
 import Brand from './Components/Brands/Brands';
 import LazyLoad from './Components/LazyLoad/LazyLoad';
 import Profile from './Components/Profile/Profile';
-import Related from './Components/Related/Related';
 import Outlets from './Components/Outlets/Outlets';
 import Footer from './Components/Footer/Footer.js';
 import Faq from './Components/Faq/Faq.js';
@@ -62,10 +61,15 @@ function App() {
                                             <Footer></Footer>
                                         </Suspense>
                                 </Route>
+                                <Route path="/outlets/:outletCategory">
+                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                            <Outlets></Outlets>
+                                            <Footer></Footer>
+                                        </Suspense>
+                                </Route>
                                 <Route path="/profile/:outletKey">
                                         <Suspense fallback={<LazyLoad></LazyLoad>}>
                                             <Profile></Profile>
-                                            <Related></Related>
                                             <Footer></Footer>
                                         </Suspense>
                                 </Route>

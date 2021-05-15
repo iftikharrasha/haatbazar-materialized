@@ -8,9 +8,15 @@ import cosmetics from '../../img/cosmetics.png';
 import clothings from '../../img/clothings.png';
 import gadgets from '../../img/gadgets.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
+import outletData from '../../fakeData/data.json';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const CategoryCard = () => {
+    // const catKey = outletData.filter(cat => cat.category === 'Foods');
+    // console.log(catKey);
+
+    const food = "Foods";
     return (
         <>
             <section className="cat-card stick-pad my-5" id="#">
@@ -19,13 +25,13 @@ const CategoryCard = () => {
                     <span className="bottom-line bl-cat"></span>
                     <Row>
                         <Col sm={4}>
-                                    <a href="#">
+                                    <Link to={"/outlets/"+food}>
                                         <div className="category-card mt-250 bg-tag-5">
                                             <p className="reg-25"><span>01</span></p>
                                             <h4 className="reg-55"><span>Foods</span></h4>
                                             <LazyLoadImage effect="blur" className="img-fluid pt-4" src={foods} alt=""/>
                                         </div>
-                                    </a>
+                                    </Link>
                                     <a href="#">
                                         <div className="category-card mt-30 bg-tag-3">
                                             <p className="reg-25"><span>04</span></p>
