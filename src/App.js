@@ -2,7 +2,7 @@ import { React, lazy, Suspense, createContext, useState } from 'react';
 import ScrollToTop from './ScrollToTop.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-import jwt_decode from "jwt-decode";
+import { getDecodedUser } from "./Components/Login/LoginManager";
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -34,38 +34,7 @@ const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 export const UserContext = createContext();
 
 function App() {
-    const getDecodedUser = () => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            return {
-                isSignedIn: false,
-                email: '',
-                name: '',
-                photo: '',
-                success: false,
-                error: ''
-            };
-        }
-        const {name, email, picture} = jwt_decode(token);
-        const decodedUser = {
-            isSignedIn: true,
-            email: email,
-            photo: picture,
-            success: true,
-            name: (name.split(' '))[0]
-        }
-        return decodedUser;
-    }
-    
     const [loggedInUser, setLoggedInUser] = useState(getDecodedUser());
-    // const [loggedInUser, setLoggedInUser] = useState({
-    //     isSignedIn: false,
-    //     email: '',
-    //     name: '',
-    //     photo: '',
-    //     success: false,
-    //     error: ''
-    // });
 
     return (
         <div className="App">

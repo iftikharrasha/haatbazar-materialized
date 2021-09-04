@@ -1,35 +1,26 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Button } from '@material-ui/core';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import logo from '../../img/logo.svg'; 
 import { Link } from 'react-router-dom';
 import './Header.css';
 import Login from '../Login/Login';
-import firebase from 'firebase/compat/app';
-
+import { handleSignOut, initializeLoginFramework } from '../Login/LoginManager';
 import {UserContext} from "../../App";
 
 const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const handleSignOut = () => {
-        firebase.auth().signOut()
-        .then((res) => {
-          const signedOutUser = {
-            isSignedIn: false,
-            name: '',
-            email: '',
-            photo: '',
-            success: false,
-            error: ''
-          }
-          localStorage.removeItem('token');
-          setLoggedInUser(signedOutUser);
-        }).catch((error) => {
-          // An error happened.
-          console.log(error);
-        });
-      }
+
+    const signOut = () => {
+        initializeLoginFramework();
+        handleSignOut()
+            .then(result => {
+                setLoggedInUser(result);
+            }).catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            });
+    }
 
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
@@ -90,7 +81,7 @@ const Header = () => {
 
                                                                 <Dropdown.Menu>
                                                                     <Link to="/ride-search" className="dropdown-item reg-16">Profile</Link>
-                                                                    <Link to="/" className="dropdown-item reg-16" onClick={handleSignOut}>Sign Out</Link>
+                                                                    <Link to="/" className="dropdown-item reg-16" onClick={signOut}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 
                                                             <Button variant="outlined" color="secondary" className="px-4" onClick={openModal}>
