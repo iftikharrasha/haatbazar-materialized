@@ -14,7 +14,7 @@ const CardSlider = (props) => {
     const [outlet, setOutlet] = useState([]);
     useEffect(() => {
       setOutlet(outletData);
-      console.log(outletData);
+      // console.log(outletData);
     }, [])
 
     var settings = {

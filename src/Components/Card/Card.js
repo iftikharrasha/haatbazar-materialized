@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
+import {UserContext} from "../../App";
+
 const Card = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const {outlet, title, img, react, views, key} = props.outlet;
 
     const [count, setCount] = useState(0);
@@ -41,9 +44,16 @@ const Card = (props) => {
                                    </p>
                                    <div className="reactions">
                                         <div className="chart-1">
-                                            <button type="button" className="react" onClick={handleIncrease}>
-                                                <i className="fa fa-heart" style={loveStyle}></i> {react + count}
-                                            </button>
+                                        {
+                                            loggedInUser.isSignedIn ?
+                                                <button type="button" className="react" onClick={handleIncrease}>
+                                                    <i className="fa fa-heart" style={loveStyle}></i> {react + count}
+                                                </button>
+                                            :
+                                                <button type="button" className="react">
+                                                    <i className="fa fa-heart" style={loveStyle}></i> {react + count}
+                                                </button>
+                                        }
                                         </div>
                                         <div className="chart-2">
                                             <div className="view">

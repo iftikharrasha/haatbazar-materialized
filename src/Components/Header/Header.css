@@ -113,6 +113,12 @@
      display: none;
    }
 
+    .profile-pic img{
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+    }
+
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

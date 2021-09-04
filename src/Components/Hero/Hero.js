@@ -33,7 +33,7 @@ const Hero = () => {
                                                 <p className="reg-25 mb-0">Countries largest</p>
                                                 <h1 className="semi-50 mb-0">Entrepreneurship</h1>
                                                 <p className="reg-25">Simulation is now LIVE.</p>
-                                                <Button variant="outlined" color="secondary" className="px-4">
+                                                <Button variant="outlined" color="secondary" className="px-4 my-2">
                                                     Learn More
                                                 </Button>
                                             </div>

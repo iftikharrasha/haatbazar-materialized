@@ -1,7 +1,8 @@
-import { React, lazy, Suspense } from 'react';
+import { React, lazy, Suspense, createContext, useState } from 'react';
 import ScrollToTop from './ScrollToTop.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import jwt_decode from "jwt-decode";
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -26,106 +27,138 @@ import {
     CSSTransition,
     TransitionGroup,
   } from 'react-transition-group';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute.js';
 
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
+export const UserContext = createContext();
 
 function App() {
+    const getDecodedUser = () => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            return {
+                isSignedIn: false,
+                email: '',
+                name: '',
+                photo: '',
+                success: false,
+                error: ''
+            };
+        }
+        const {name, email, picture} = jwt_decode(token);
+        const decodedUser = {
+            isSignedIn: true,
+            email: email,
+            photo: picture,
+            success: true,
+            name: (name.split(' '))[0]
+        }
+        return decodedUser;
+    }
     
-  return (
-    <div className="App">
-        <Router>
-            <Header></Header>
-            <ScrollToTop>
-                 <Route render={({location}) => (
-                     <TransitionGroup>
-                        <CSSTransition
-                        key={location.key}
-                        timeout={300}
-                        classNames="fade"
-                        >
-                            <Switch location={location}>
-                                <Route path="/home">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <Hero></Hero>
-                                            <Album></Album>
-                                            <CategoryCard></CategoryCard>
-                                            <Brand></Brand>
-                                            <BigImage></BigImage>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="/outlets">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <Outlets></Outlets>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="/outlets/:outletCategory">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <Outlets></Outlets>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="/profile/:outletKey">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <Profile></Profile>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="/about">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <About></About>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="/contact">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <Contact></Contact>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="/faq">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <Faq></Faq>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="/privacy-policy">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <PrivacyPolicy></PrivacyPolicy>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route exact path="/">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <Hero></Hero>
-                                            <Album></Album>
-                                            <CategoryCard></CategoryCard>
-                                            <Brand></Brand>
-                                            <Footer></Footer>
-                                        </Suspense>
-                                </Route>
-                                <Route path="*">
-                                        <Suspense fallback={<LazyLoad></LazyLoad>}>
-                                            <NotFound></NotFound>
-                                        </Suspense>
-                                </Route>
-                            </Switch>
-                        </CSSTransition>
-                    </TransitionGroup>
-                 )} />
-            </ScrollToTop>
-        </Router>
-        
-        <div className="facebook">
-            <Button>
-                <div className="fb-text">
-                <span><i className="fab fa-facebook"></i></span> Facebook</div>
-            </Button>
+    const [loggedInUser, setLoggedInUser] = useState(getDecodedUser());
+    // const [loggedInUser, setLoggedInUser] = useState({
+    //     isSignedIn: false,
+    //     email: '',
+    //     name: '',
+    //     photo: '',
+    //     success: false,
+    //     error: ''
+    // });
+
+    return (
+        <div className="App">
+            <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+                <Router>
+                    <Header></Header>
+                    <ScrollToTop>
+                        <Route render={({location}) => (
+                            <TransitionGroup>
+                                <CSSTransition
+                                key={location.key}
+                                timeout={300}
+                                classNames="fade"
+                                >
+                                    <Switch location={location}>
+                                        <Route path="/outlets">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <Outlets></Outlets>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <Route path="/outlets/:outletCategory">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <Outlets></Outlets>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <Route path="/profile/:outletKey">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <Profile></Profile>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <Route path="/about">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <About></About>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <Route path="/contact">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <Contact></Contact>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <Route path="/faq">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <Faq></Faq>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <Route path="/privacy-policy">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <PrivacyPolicy></PrivacyPolicy>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <Route exact path="/">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <Hero></Hero>
+                                                    <Brand></Brand>
+                                                    <CategoryCard></CategoryCard>
+                                                    <Album></Album>
+                                                    <BigImage></BigImage>
+                                                    <Footer></Footer>
+                                                </Suspense>
+                                        </Route>
+                                        <PrivateRoute path="/about">
+                                                <Header></Header>
+                                                <Profile></Profile>
+                                                <Footer></Footer>
+                                        </PrivateRoute>
+                                        <Route path="*">
+                                                <Suspense fallback={<LazyLoad></LazyLoad>}>
+                                                    <NotFound></NotFound>
+                                                </Suspense>
+                                        </Route>
+                                    </Switch>
+                                </CSSTransition>
+                            </TransitionGroup>
+                        )} />
+                    </ScrollToTop>
+                </Router>
+            </UserContext.Provider>
+            
+            <div className="facebook">
+                <Button>
+                    <div className="fb-text">
+                    <span><i className="fab fa-facebook"></i></span> Facebook</div>
+                </Button>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;

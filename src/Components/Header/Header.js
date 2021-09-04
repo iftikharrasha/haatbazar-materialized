@@ -1,9 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Button } from '@material-ui/core';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 import logo from '../../img/logo.svg'; 
 import { Link } from 'react-router-dom';
 import './Header.css';
+import Login from '../Login/Login';
+import firebase from 'firebase/compat/app';
+
+import {UserContext} from "../../App";
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const handleSignOut = () => {
+        firebase.auth().signOut()
+        .then((res) => {
+          const signedOutUser = {
+            isSignedIn: false,
+            name: '',
+            email: '',
+            photo: '',
+            success: false,
+            error: ''
+          }
+          localStorage.removeItem('token');
+          setLoggedInUser(signedOutUser);
+        }).catch((error) => {
+          // An error happened.
+          console.log(error);
+        });
+      }
+
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -16,12 +43,23 @@ const Header = () => {
         document.getElementById('mobile-nav').classList.toggle('active');
     }
 
+    //login modal
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return (
         <>
             <header className={scroll ? "header-sticky" : "header"}>
                 <div className="container">
                         <nav className="navbarItems">
-                            <Link to="/home" className="navbar-logo">
+                            <Link to="/" className="navbar-logo">
                                 <img src={logo} width="80%" className="d-inline-block align-top" alt="logo"/>
                             </Link>
 
@@ -33,14 +71,37 @@ const Header = () => {
                                 </svg>
                             </div>
                             <div className="nav-menu" id="mobile-nav">
-                                    <Link to="/home" className="pr-4 active nav-links nav-top-mt" onClick={activeToggle}>Home</Link>
+                                    <Link to="/" className="pr-4 active nav-links nav-top-mt" onClick={activeToggle}>Home</Link>
                                     <Link to="/outlets" className="pr-4 nav-links" onClick={activeToggle}>Outlets</Link>
                                     <Link to="/about" className="pr-4 nav-links" onClick={activeToggle}>About Us</Link>
                                     <Link to="/contact" className="pr-4 nav-links" onClick={activeToggle}>Contact Us</Link>
+                                    
+                                    
+
+                                    {
+                                    loggedInUser.isSignedIn ?
+                                                            <Dropdown>
+                                                                <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center">
+                                                                    <span className="avatar profile-pic mr-2">
+                                                                        <img alt={loggedInUser.name} src={loggedInUser.photo}/>
+                                                                    </span>
+                                                                    <span className="mb-0">{loggedInUser.name}</span>
+                                                                </Dropdown.Toggle>
+
+                                                                <Dropdown.Menu>
+                                                                    <Link to="/ride-search" className="dropdown-item reg-16">Profile</Link>
+                                                                    <Link to="/" className="dropdown-item reg-16" onClick={handleSignOut}>Sign Out</Link>
+                                                                </Dropdown.Menu>
+                                                            </Dropdown> : 
+                                                            <Button variant="outlined" color="secondary" className="px-4" onClick={openModal}>
+                                                                Login
+                                                            </Button>
+                                }
                             </div>
                         </nav>
                 </div>
             </header> 
+            <Login modalIsOpen={modalIsOpen} closeModal={closeModal}></Login>
         </>
     );
 };

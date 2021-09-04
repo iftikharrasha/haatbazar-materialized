@@ -1,0 +1,8 @@
+.social-login button{
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
