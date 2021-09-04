@@ -9,7 +9,7 @@
   NSU HAATBAZAR
 </h1>
 <p align="center">
-  Built using <a href="https://reactjs.org/" target="_blank">React JS</a> and hosted on <a href="https://firebase.google.com/" target="_blank">firebase</a> with firebase authentication and <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
+  Built using <a href="https://reactjs.org/" target="_blank">React JS</a> and hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
 </p>
 
 ![hero](./src/img/haatbazar-ui.png)
