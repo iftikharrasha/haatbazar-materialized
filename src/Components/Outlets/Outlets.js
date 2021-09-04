@@ -15,15 +15,12 @@ const Outlets = () => {
     const [outlet, setOutlet] = useState(outletData);
     const filterItems = (category) => {
         if (category === 'All') {
-            document.getElementById('toggle-in').classList.toggle('bmd-drawer-in');
-            document.getElementById('overlay-in').classList.toggle('in');
+            activeDrawer();
             setOutlet(outletData);
           return;
         }
         const newItems = outletData.filter((item) => item.category === category);
-        document.getElementById('toggle-in').classList.toggle('bmd-drawer-in');
-        document.getElementById('overlay-in').classList.toggle('in');
-    
+        activeDrawer();
         setOutlet(newItems);
      };
     // delete

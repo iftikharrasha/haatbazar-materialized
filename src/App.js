@@ -1,16 +1,16 @@
 import { React, lazy, Suspense } from 'react';
 import ScrollToTop from './ScrollToTop.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 import './App.css';
-import CategoryCard from './Components/CategoryCard/CategoryCard';
-import Header from './Components/Header/Header';
-import Hero from './Components/Hero/Hero';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import { Button } from 'react-bootstrap';
+import CategoryCard from './Components/CategoryCard/CategoryCard';
+import Header from './Components/Header/Header';
+import Hero from './Components/Hero/Hero';
 import Album from './Components/Album/Album';
 import Brand from './Components/Brands/Brands';
 import LazyLoad from './Components/LazyLoad/LazyLoad';
