@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import "firebase/compat/analytics";
 import 'firebase/compat/auth';
-import firebaseConfig from "./firebase.config";
+import firebaseConfig from "../../firebase.config";
 import jwt_decode from "jwt-decode";
 
 export const initializeLoginFramework = () => { 

@@ -49,7 +49,7 @@ const Login = ({modalIsOpen, closeModal}) => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <button onClick={closeModal} type="button" class="close">
+                <button onClick={closeModal} type="button" className="close">
                     <span aria-hidden="true">×</span>
                 </button>
                 <div className="text-center">

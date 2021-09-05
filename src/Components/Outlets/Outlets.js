@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Categories from '../Categories/Categories';
-import OutletCard from '../OutletCard/OutletCard';
+import Card from '../Card/Card';
 import catToggle from '../../img/toggler-icon.svg';
 import './Outlets.css';
+import '../OutletCard/OutletCard.css';
 import outletData from '../../fakeData/data.json';
 import Pagination from '../Pagination/Pagination';
 
@@ -123,7 +124,7 @@ const Outlets = () => {
                                                                         }
                                                                     }).slice(pagination.start,pagination.end).map(outlet =>
                                                                                         <Col sm={6} lg={4} key={outlet.id}>
-                                                                                            <OutletCard outlet={outlet}></OutletCard>
+                                                                                            <Card outlet={outlet}></Card>
                                                                                         </Col>
                                                                         )
                                                                 }
