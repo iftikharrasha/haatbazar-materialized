@@ -28,6 +28,7 @@ import {
     TransitionGroup,
   } from 'react-transition-group';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute.js';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const NotFound = lazy(() => import('./Components/NotFound/NotFound'));
 
@@ -119,6 +120,9 @@ function App() {
                     </ScrollToTop>
                 </Router>
             </UserContext.Provider>
+
+            <MessengerCustomerChat pageId="100000686899395" appId="139797061505174"/>
+            {/* now just host and go to set the domain whitelist from the facebook page */}
             
             <div className="facebook">
                 <Button>
