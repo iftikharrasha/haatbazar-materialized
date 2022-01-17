@@ -8,7 +8,7 @@ import './Profile.css';
 import outletData from '../../fakeData/data.json';
 import Related from '../Related/Related';
 
-const Profile = (props) => {
+const Profile = () => {
 
     const { outletKey } = useParams();
     const outletDetail = outletData.find(brand => brand.key === outletKey);

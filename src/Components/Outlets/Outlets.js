@@ -5,34 +5,31 @@ import Card from '../Card/Card';
 import catToggle from '../../img/toggler-icon.svg';
 import './Outlets.css';
 import '../OutletCard/OutletCard.css';
-import outletData from '../../fakeData/data.json';
 import Pagination from '../Pagination/Pagination';
 
 const Outlets = () => {
-    // delete
-    const allCategories = ['All', ...new Set(outletData.map((item) => item.category))];
+    const [outlets, setOutlets] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/outlets')
+        .then(res => res.json())
+        .then(data => setOutlets(data));
+    }, [])
+    
+    const allCategories = ['All', ...new Set(outlets.map((item) => item.category))];
     const [categories] = useState(allCategories);
 
-    const [outlet, setOutlet] = useState(outletData);
     const filterItems = (category) => {
         if (category === 'All') {
             activeDrawer();
-            setOutlet(outletData);
+            setOutlets(outlets);
           return;
         }
-        const newItems = outletData.filter((item) => item.category === category);
+        const newItems = outlets.filter((item) => item.category === category);
         activeDrawer();
-        setOutlet(newItems);
+        setOutlets(newItems);
      };
-    // delete
 
     const [searchTerm, setSearchTerm] = useState('');
-
-    // const [outlet, setOutlet] = useState([]);
-    // useEffect(() => {
-    //   setOutlet(outletData);
-    //   console.log(outletData);
-    // }, [])
 
     const [showPerPage, setShowPerPage] = useState(9);
 
@@ -116,7 +113,7 @@ const Outlets = () => {
                                                             <Col lg={11} className="offset-lg-1">
                                                                 <Row>
                                                                 {
-                                                                    outlet.filter(outlet => {
+                                                                    outlets.filter(outlet => {
                                                                         if(searchTerm == ""){
                                                                             return outlet;
                                                                         }else if(outlet.category.toLowerCase().includes(searchTerm.toLowerCase()) || outlet.outlet.toLowerCase().includes(searchTerm.toLowerCase()) || outlet.title.toLowerCase().includes(searchTerm.toLowerCase())){
@@ -129,7 +126,7 @@ const Outlets = () => {
                                                                         )
                                                                 }
                                                                 </Row>
-                                                                <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={outlet.length}></Pagination>
+                                                                <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={outlets.length}></Pagination>
                                                             </Col>
                                                         </Row>
                                             </main>

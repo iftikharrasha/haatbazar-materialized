@@ -5,22 +5,22 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import './CardSlider.css';
 import Card from '../Card/Card';
-import outletData from '../../fakeData/data.json';
 
 const CardSlider = (props) => {
     const relCat = props.relatedCat;
     // const first5 = outletData.slice(0,5);
-    // const [outlet, setOutlet] = useState(first5);
+
     const [outlet, setOutlet] = useState([]);
     useEffect(() => {
-      setOutlet(outletData);
-      // console.log(outletData);
+        fetch('http://localhost:5000/outlets')
+        .then(res => res.json())
+        .then(data => setOutlet(data));
     }, [])
 
     var settings = {
         slidesToShow: 4,
         slidesToScroll: 2,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2400,
         infinite: false,    
         speed: 1800,
